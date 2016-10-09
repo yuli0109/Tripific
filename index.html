@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Google Test</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+</head>
+<body>
+<div>
+  <div class="row">
+    <label class="col-sm-1">Origin:</label>
+    <input class="col-md-2" type="text">
+  </div>
+  <div class="row">
+    <label class="col-sm-1">Destination:</label>
+    <input type="text" class="col-md-2">
+    <button type="button" class="btn btn-primary col-xs-offset-1 col-sm-1">Go</button>
+  </div>
+</div>
+<div id="map"></div>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="main.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCSPeNs4RKje84chLxyLJKBdv_kf9gY7E&libraries=drawing&callback=initMap"
+        async defer></script>
+</body>
+
+</html>
