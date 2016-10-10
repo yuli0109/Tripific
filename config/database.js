@@ -1,6 +1,11 @@
 var mongoose = require('mongoose');
 
-mongoose.connect(process.env.DATABASE_URL);
+mongoose.Promise = Promise;
+
+//todo check database URL has been set on Heroku
+var url = process.env.DATABASE_URL || "mongodb://localhost/tripific";
+
+mongoose.connect(url);
 
 // database connection event
 mongoose.connection.once('open', function () {
