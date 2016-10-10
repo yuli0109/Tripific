@@ -16,3 +16,7 @@ div#inputDiv {
   text-align: right;
   width: 500px;
 }
+
+ul {
+  list-style-type: none;
+}
