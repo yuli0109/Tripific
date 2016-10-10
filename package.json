@@ -2,10 +2,11 @@
   "name": "google_map_test",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
+  "main": "server.js",
   "scripts": {
     "test": "NODE_ENV=testing node test.js",
-    "seed": "node seeds.js"
+    "seed": "node seeds.js",
+    "start": "node ./bin/www"
   },
   "repository": {
     "type": "git",
@@ -16,12 +17,9 @@
   "bugs": {
     "url": "https://github.com/vkurzweg/google_map_test/issues"
   },
-  "homepage": "https://github.com/vkurzweg/google_map_test#readme"
+  "homepage": "https://github.com/vkurzweg/google_map_test#readme",
   "version": "0.0.0",
   "private": true,
-  "scripts": {
-    "start": "node ./bin/www"
-  },
   "dependencies": {
     "body-parser": "~1.15.1",
     "cookie-parser": "~1.4.3",
