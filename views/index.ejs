@@ -10,6 +10,13 @@
 <body>
 <div id="inputDiv">
   <div class="row">
+    <ul class="right">
+      <% if (user) { %>
+      <li><a href="/logout">Logout</a></li>
+      <% } else { %>
+      <li><a href="/auth/google">Login with Google</a></li>
+      <% } %>
+    </ul>
     <label class="col-sm-3">Origin:</label>
     <input class="col-md-4" type="text" id="origin">
   </div>

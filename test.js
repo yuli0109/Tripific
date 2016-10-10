@@ -1,5 +1,5 @@
 // run this file with npm run test
-
+require('dotenv').config();
 var db = require('./config/database');
 var User = require('./models/user');
 var Trip = require('./models/trip');
