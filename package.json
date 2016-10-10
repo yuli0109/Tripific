@@ -4,7 +4,8 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "test": "NODE_ENV=testing node test.js"
+    "test": "NODE_ENV=testing node test.js",
+    "seed": "node seeds.js"
   },
   "repository": {
     "type": "git",
