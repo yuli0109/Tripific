@@ -27,7 +27,11 @@
     "dotenv": "^2.0.0",
     "ejs": "~2.4.1",
     "express": "~4.13.4",
+    "express-session": "^1.14.1",
+    "mongoose": "^4.6.3",
     "morgan": "~1.7.0",
+    "passport": "^0.3.2",
+    "passport-google-oauth20": "^1.0.0",
     "serve-favicon": "~2.3.0",
     "yelp-v3": "0.0.5"
   }
