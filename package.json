@@ -1,6 +1,5 @@
 {
   "name": "google_map_test",
-<<<<<<< HEAD
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
@@ -18,7 +17,6 @@
     "url": "https://github.com/vkurzweg/google_map_test/issues"
   },
   "homepage": "https://github.com/vkurzweg/google_map_test#readme"
-=======
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -35,5 +33,4 @@
     "serve-favicon": "~2.3.0",
     "yelp-v3": "0.0.5"
   }
->>>>>>> master
 }
