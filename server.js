@@ -8,6 +8,7 @@ var session = require('express-session');
 var passport = require('passport');
 
 var routes = require('./routes/index');
+var google = require('./routes/google-maps');
 
 var app = express();
 
@@ -35,7 +36,9 @@ app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
+app.use('/', google);
 
+console.log(app.get('env'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
