@@ -2,7 +2,7 @@
   "name": "google_map_test",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "bin/www",
   "scripts": {
     "test": "NODE_ENV=testing node test.js",
     "seed": "node seeds.js",
