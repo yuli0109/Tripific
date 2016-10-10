@@ -6,9 +6,9 @@ var User = require('../models/user');
 
 // verify function
 passport.use(new GoogleStrategy({
-    clientID: '187202830332-de6qsmv9teur65jc9a9848ocf7ae42bj.apps.googleusercontent.com',
-    clientSecret: 'cW9MKQeMfEeOA3ptuOfFEwDo',
-    callbackURL: 'http://localhost:3000/oauth2callback'
+    clientID: `${process.env.GOOGLE_CLIENT_ID}`,
+    clientSecret: `${process.env.GOOGLE_SECRET}`,
+    callbackURL: `${process.env.GOOGLE_CALLBACK}`
   },
   function(accessToken, refreshToken, profile, cb) {
     User.findOne({ 'googleId': profile.id }, function(err, user) {
