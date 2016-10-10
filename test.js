@@ -1,3 +1,5 @@
+// run this file with npm run test
+
 var db = require('./config/database');
 var User = require('./models/user');
 
