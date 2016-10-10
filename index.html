@@ -8,15 +8,15 @@
   <script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 </head>
 <body>
-<div>
+<div id="inputDiv">
   <div class="row">
-    <label class="col-sm-1">Origin:</label>
-    <input class="col-md-2" type="text">
+    <label class="col-sm-3">Origin:</label>
+    <input class="col-md-4" type="text" id="origin">
   </div>
   <div class="row">
-    <label class="col-sm-1">Destination:</label>
-    <input type="text" class="col-md-2">
-    <button type="button" class="btn btn-primary col-xs-offset-1 col-sm-1">Go</button>
+    <label class="col-sm-3">Destination:</label>
+    <input type="text" class="col-md-4" id="dest">
+    <button type="button" class="btn btn-primary col-sm-offset-1 col-sm-1" id="goBtn">Go</button>
   </div>
 </div>
 <div id="map"></div>

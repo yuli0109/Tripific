@@ -1,6 +1,6 @@
 #map {
   width: 80%;
-  height: 90%;
+  height: 80%;
   margin: 0 auto;
 }
 html, body {
@@ -9,3 +9,10 @@ html, body {
   padding: 0;
 }
 
+div#inputDiv {
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: right;
+  width: 500px;
+}

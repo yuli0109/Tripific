@@ -2,17 +2,28 @@ console.log('linked!');
 
 //AIzaSyCCSPeNs4RKje84chLxyLJKBdv_kf9gY7E
 
-var chicago = {lat: 41.85, lng: -87.65};
+var los_angeles = {lat: 34.06, lng: -118.24};
+var waypts = [];
 
 function initMap() {
+  var directionsService = new google.maps.DirectionsService;
+  var directionsDisplay = new google.maps.DirectionsRenderer;
   //Array of marker object
   var markers = [];
   //Array Id counter
   var markerId = 0;
   map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 12,
-    center: chicago
+    zoom: 9,
+    center: los_angeles
   });
+
+  directionsDisplay.setMap(map);
+
+  var onClickHandler = function() {
+    calculateAndDisplayRoute(directionsService, directionsDisplay);
+  };
+
+  document.getElementById('goBtn').addEventListener('click', onClickHandler);
 
   //Define the drawing manager
   var drawingManager = new google.maps.drawing.DrawingManager({
@@ -40,7 +51,12 @@ function initMap() {
       })
       //Remove marker on map
       this.setMap(null);
-      console.log(markers);
+      // console.log(marker);
+      waypts = waypts.filter(function(elm){
+        return elm.location.lat != marker.getPosition().lat()
+      });
+      // console.log(`Waypath after delete: ${waypts}`);
+      calculateAndDisplayRoute(directionsService, directionsDisplay)
     });
     //Add listener to right click on marker
     google.maps.event.addListener(marker, 'rightclick', function(mouseEvent) {
@@ -52,10 +68,34 @@ function initMap() {
       marker: marker
     });
     console.log(`Latitude: ${marker.getPosition().lat()}, Longitude: ${marker.getPosition().lng()}`);
-    console.log(markers);
+    console.log(marker.getPosition());
+    waypts.push({
+      location: {
+        lat: marker.getPosition().lat(),
+        lng: marker.getPosition().lng()
+      },
+      stopover: false
+    });
+    // console.log(`Waypath after add: ${waypts}`);
+    calculateAndDisplayRoute(directionsService, directionsDisplay)
   });
 }
 
+function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+  directionsService.route({
+    origin: document.getElementById('origin').value,
+    destination: document.getElementById('dest').value,
+    travelMode: 'DRIVING',
+    waypoints: waypts
+  }, function(response, status) {
+      console.log(response);
+      if (status === 'OK') {
+      directionsDisplay.setDirections(response);
+      } else {
+      window.alert('Directions request failed due to ' + status);
+      }
+    });
+}
 
   // var directionsDisplay = new google.maps.DirectionsRendere({
   //   map: map
