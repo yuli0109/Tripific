@@ -9,12 +9,13 @@
 </head>
 <body>
 <div id="inputDiv">
-  <div class="row">
+  <div class="row class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"">
     <ul class="right">
       <% if (user) { %>
-      <li><a href="/logout">Logout</a></li>
+
+      <a href="/logout"><img src="" alt="">Logout</a>
       <% } else { %>
-      <li><a href="/auth/google">Login with Google</a></li>
+      <a href="/auth/google"><img src="googlebtn.png" alt="Login with Google"></a>
       <% } %>
     </ul>
     <label class="col-sm-3">Origin:</label>
