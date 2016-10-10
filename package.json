@@ -1,5 +1,22 @@
 {
   "name": "google_map_test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "NODE_ENV=testing node test.js",
+    "seed": "node seeds.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vkurzweg/google_map_test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vkurzweg/google_map_test/issues"
+  },
+  "homepage": "https://github.com/vkurzweg/google_map_test#readme"
   "version": "0.0.0",
   "private": true,
   "scripts": {
