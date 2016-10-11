@@ -1,5 +1,4 @@
 var mongoose = require('mongoose');
-var stop = require('./stop');
 var ObjectId = mongoose.Schema.Types.ObjectId;
 
 var activitiesSchema = new mongoose.Schema({
