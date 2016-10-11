@@ -5,8 +5,6 @@ console.log('linked!');
 var los_angeles = {lat: 34.06, lng: -118.24};
 var waypts = [];
 
-
-
 function initMap() {
   var autocomplete_orgin = new google.maps.places.Autocomplete(document.getElementById('origin'));
   var autocomplete_dest = new google.maps.places.Autocomplete(document.getElementById('dest'));
@@ -108,23 +106,7 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
 
 $(".js-example-basic-multiple").select2();
 
-  // var directionsDisplay = new google.maps.DirectionsRendere({
-  //   map: map
-  // });
-
-  // // Set destination, origin and travel mode.
-  // var request = {
-  //   destination: indianapolis,
-  //   origin: chicago,
-  //   travelMode: 'DRIVING'
-  // };
-
-  // // Pass the directions request to the directions service.
-  // var directionsService = new google.maps.DirectionsService();
-  //   directionsService.route(request, function(response, status) {
-  //     if (status == 'OK') {
-  //     // Display the route on the map.
-  //     directionsDisplay.setDirections(response);
-  //     }
-  //   });
-
+function searchBusiness (term) {
+    console.log(term);
+    console.log($("#price_selection").val().join());
+}
