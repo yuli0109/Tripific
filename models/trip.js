@@ -4,13 +4,15 @@ var ObjectId = mongoose.Schema.Types.ObjectId;
 
 var activitiesSchema = new mongoose.Schema({
   type: String,
-  name: String,
-  location: String
+  name: String
 });
 
 var stopSchema = new mongoose.Schema({
   name: String,
-  location: String,
+  location: {
+    lat: String,
+    lng: String
+  },
   activities: [activitiesSchema]
 });
 

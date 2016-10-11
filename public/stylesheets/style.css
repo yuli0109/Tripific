@@ -62,8 +62,6 @@ ul {
   opacity: .9;
 }
 
-
-
 #logout {
   border-color: #F7F7EF;
   color: #F7F7EF;
@@ -76,6 +74,7 @@ ul {
   letter-spacing: 2px;
   font-family: 'Shrikhand', sans-serif;
   color: #FBF3E6;
+  text-shadow: 2px 2px #B2B5BE;
 }
 
 #home-text {
@@ -89,6 +88,17 @@ ul {
   background-color: #13BB7E;
   color: #F7F7EF;
   margin-top: 35px;
+  box-shadow: 1px 1px 1px #888888;
+}
+
+#header {
+  margin-left: 1100px;
+}
+
+#logout {
+  margin-top: 15px;
+  margin-bottom: 20px;
+  margin-left: 100px;
 }
 
 #about {

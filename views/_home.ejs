@@ -3,9 +3,9 @@
 <header id="header" class="">
     <ul class="right">
       <% if (user) { %>
-      <a href="/logout" id="logout" class="btn"><img src="" alt="">Logout</a></button>
+      <a href="/logout" id="logout" class="btn logout"><img src="" alt="">Logout</a></button>
       <% } else { %>
-      <a href="/auth/google"><img src="./images/googlebtn.png" alt="Login with Google"></a>
+      <a href="/auth/google" class="btn btn-lg btn-outline-secondary"><img src="./images/googlebtn.png" alt="Login with Google"></a>
       <% } %>
     </ul>
 </header>
