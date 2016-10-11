@@ -89,6 +89,10 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
     waypoints: waypts
   }, function(response, status) {
       console.log(response);
+      $("#start_loc").text(response.routes[0].legs[0].start_address);
+      $("#end_loc").text(response.routes[0].legs[0].end_address);
+      $("#cell_duration").text(response.routes[0].legs[0].duration.text);
+      $("#cell_milage").text(response.routes[0].legs[0].distance.text);
       if (status === 'OK') {
       directionsDisplay.setDirections(response);
       } else {
