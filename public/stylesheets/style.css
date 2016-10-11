@@ -91,6 +91,16 @@ ul {
   margin-top: 35px;
 }
 
+#header {
+  margin-left: 1100px;
+}
+
+#logout {
+  margin-top: 15px;
+  margin-bottom: 20px;
+  margin-left: 100px;
+}
+
 #about {
   background-color: #181818;
   color: #F7F7EF;
