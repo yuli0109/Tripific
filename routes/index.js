@@ -7,7 +7,6 @@ router.get('/', function(req, res, next) {
   res.render('index', {user: req.user});
 });
 
-
 router.get('/new_user', function(req, res, next) {
   res.render('app');
 });
