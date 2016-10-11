@@ -5,7 +5,11 @@ console.log('linked!');
 var los_angeles = {lat: 34.06, lng: -118.24};
 var waypts = [];
 
+
+
 function initMap() {
+  var autocomplete_orgin = new google.maps.places.Autocomplete(document.getElementById('origin'));
+  var autocomplete_dest = new google.maps.places.Autocomplete(document.getElementById('dest'));
   var directionsService = new google.maps.DirectionsService;
   var directionsDisplay = new google.maps.DirectionsRenderer;
   //Array of marker object
