@@ -11,6 +11,7 @@ module.exports = {
 function createStop(req, res) {
   Trip.findById(req.params.tripId, function(err, trip){
     trip.stops.push(req.body);
+    trip.activities = [];
     trip.save(function(err){
       res.json(trip);
     });
