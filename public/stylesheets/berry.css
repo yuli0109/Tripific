@@ -27,9 +27,14 @@
   background: rgba(255,255,255,0.8);
 }
 
-a.list-group-item {
+div.list-group-item {
   margin: 3px 5px;
   background: none;
+}
+
+img.img-flag {
+  max-width: 100px;
+  margin-top: 20px;
 }
 
 #price_selection {
