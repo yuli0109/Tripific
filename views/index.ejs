@@ -9,13 +9,16 @@
 </head>
 <body>
 <header id="header" class="">
+  <nav>
     <ul class="right">
+      <a href="/">Home</a>
       <% if (user) { %>
       <a href="/logout" class="btn btn-primary"><img src="" alt="">Logout</a></button>
       <% } else { %>
       <a href="/auth/google"><img src="./images/googlebtn.png" alt="Login with Google"></a>
       <% } %>
     </ul>
+  </nav>
 </header>
 <div id="inputDiv">
   <div class="row">
