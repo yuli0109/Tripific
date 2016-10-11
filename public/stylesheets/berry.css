@@ -6,6 +6,12 @@
   background-size: cover;
 }
 
+#restaurant_partial {
+  height: 100%;
+  width:  100%;
+  margin: 0 auto;
+}
+
 #restaurant_filter {
   height: 80%;
   width: 30%;
@@ -14,7 +20,27 @@
 }
 
 #restaurant_list {
-  height: 80%;
+  height: 100%;
   width: 65%;
-  margin-top: 5%
+  margin: 0 auto;
+  margin-top: 5%;
+  background: rgba(255,255,255,0.8);
+}
+
+div.list-group-item {
+  margin: 3px 5px;
+  background: none;
+}
+
+img.img-flag {
+  max-width: 100px;
+  margin-top: 20px;
+}
+
+#price_selection {
+  width: 300px;
+}
+
+#restaurant_page_nav {
+  width: 30%;
 }
