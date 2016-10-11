@@ -1,6 +1,7 @@
 var Trip = require('../models/trip');
 
 module.exports = {
+  index: index,
   create: create,
   delete: del
 };
@@ -16,15 +17,17 @@ function index(req, res) {
 
 function create(req, res) {
   var trip = new Trip(req.body);
+  trip.stops = [];
   trip.userId = req.user.id;
   trip.save(function(err, trip){
     if (err) return res.status(401).json({msg: 'Failed to save Trip'});
     res.status(201).json(trip);
- })
+ });
 }
 
 function del(req, res) {
-  Trip.findByIdAndRemove(req.user.id, function(err, trip){
+  Trip.findByIdAndRemove(req.params.tripId, function(err, trip){
+    trip.pop();
     trip.save(function(err){
       res.json(trip);
     })
