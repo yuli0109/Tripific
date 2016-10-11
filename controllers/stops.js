@@ -1,13 +1,14 @@
 var Trip = require('../models/trip');
 
 module.exports = {
-  create: create,
-  update: update,
-  delete: del
+  createStop: createStop,
+  addActivity: addActivity,
+  removeActivity: removeActivity,
+  removeStop: removeStop
 };
 
 
-function create(req, res) {
+function createStop(req, res) {
   Trip.findById(req.params.tripId, function(err, trip){
     trip.stops.push(req.body);
     trip.save(function(err){
@@ -17,9 +18,7 @@ function create(req, res) {
 }
 
 function addActivity(req, res) {
-  Trip.findBy({userId: req.user.id}).where('stops').in(req.params.stopId).exec(function(err,trip){
-    // trip.stop.name = req.body.trip.stop.name;
-    // trip.stop.location = req.body.trip.stop.location;
+  Trip.findBy({userId: req.user.id}).where('stops._id').in(req.params.stopId).exec(function(err,trip){
     trip.stop.activities.push({
       type: req.body.businessType,
       name: req.body.businessName
@@ -30,12 +29,17 @@ function addActivity(req, res) {
   });
 }
 
-// function removeActivity(req, res) {
+function removeActivity(req, res) {
+  Trip.findOne({userId: req.user.id}).where('activities._id').in(req.params.activityId).exec(function(err,trip){
+    trip.stop.activities.id(req.params.activityId).remove();
+    trip.save(function(err){
+      res.json(trip);
+    });
+  });
+}
 
-// }
-
-function del(req, res) {
-  Trip.findBy({userId: req.user.id}).where('stops').in(req.params.stopId).exec(function(err, trip){
+function removeStop(req, res) {
+  Trip.findOne({userId: req.user.id}).where('stops._id').in(req.params.stopId).exec(function(err, trip){
     trip.stops.id(req.params.stopId).remove();
     trip.save(function(err){
       res.json(trip);
