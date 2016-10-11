@@ -1,19 +1,24 @@
 #route_partial {
   margin: 0 auto;
   /*border: 1px solid black;*/
-  width: 90%;
+  height: 100%;
+  width:  100%;
+  background-image: url("http://wallpapercave.com/wp/ZDRooQC.jpg");
+  background-size: cover;
 }
+
 #map {
   width: 95%;
   height: 90%;
   margin: 0 auto;
   margin-top: 20px;
   border-radius: 30px;
+  border:5px solid gray;
 }
 
 #map_container {
   width: 70%;
-  height: 500px;
+  height: 100%;
   /*border: 1px solid black;*/
 }
 
@@ -27,8 +32,9 @@
 div#route_info {
   width: 95%;
   height: 500px;
-/*  border: 1px solid red;*/
+  /*border: 1px solid red;*/
   margin: 0 auto;
+  margin-top: 50%
 }
 
 html, body {
