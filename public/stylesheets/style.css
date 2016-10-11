@@ -28,10 +28,9 @@
 }
 
 #info_container {
-  margin-left: 30px;
   width: 26%;
-  height: 500px;
-/*  border: 1px solid black;*/
+  height: 100%;
+  margin-bottom: 20px;
 }
 
 div#route_info {
@@ -133,3 +132,25 @@ ul {
   font-family: 'Lato', sans-serif;
   font-size: 14px;
 }
+@media only screen and (max-width:1350px) {
+#header {
+  margin-left: 70%;
+  vertical-align: middle;
+ }
+#map {
+  height: 60%;
+  width: 80%;
+
+ }
+}
+/*@media only screen and (max-width:1000px) {
+#header {
+  margin-left: 70%;
+  vertical-align: middle;
+ }
+#map {
+  height: 40%;
+  width: 60%;
+
+ }
+}*/
