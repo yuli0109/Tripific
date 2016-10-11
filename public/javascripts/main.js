@@ -105,6 +105,9 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
     });
 }
 
+
+$(".js-example-basic-multiple").select2();
+
   // var directionsDisplay = new google.maps.DirectionsRendere({
   //   map: map
   // });
