@@ -1,0 +1,55 @@
+/*'Start' View*/
+
+#start {
+  height: 500px;
+  background-image: url("/images/start_night2.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: .9;
+}
+
+div#inputDiv {
+  position: relative;
+  padding-right: 250px;
+  padding-top: 170px;
+  text-align: right;
+  width: 500px;
+  color: #E4B100;
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+  background-color:rgba(0, 0, 0, .3);
+}
+
+#origin-row {
+  margin-bottom: 25px;
+  width: 200%;
+  height: 200%;
+}
+
+#origin {
+  background-color:rgba(0, 0, 0, 0);
+  height:50px;
+  width: 300px;
+}
+
+#dest {
+  background-color:rgba(0, 0, 0, 0);
+  height:50px;
+  width: 300px;
+}
+
+#destination-row {
+  width: 200%;
+  height: 200%;
+}
+
+#goBtn {
+  background-color: #13BB7E;
+  color: #F7F7EF;
+  margin-top: 35px;
+  text-align: center;
+  width: 100px;
+  margin-right: 150px;
+}

@@ -1,26 +1,35 @@
-var User = require('../models/user');
+var Trip = require('../models/trip');
 
 module.exports = {
+  index: index,
   create: create,
   delete: del
 };
 
- //need to use populate('').exec(function(err, user))
+ //need to use populate('').exec(function(err, user)) req.body(json body parser)
+
+function index(req, res) {
+  Trip.findBy({userId: req.user.id}, function(err, trips) {
+    if (err) return res.status(401).json({msg: 'Failed to retrieve Trips'});
+    res.status(200).json(trips);
+  });
+}
 
 function create(req, res) {
-User.findById(req.user.id, function(err, user){
-  user.trips.push({trips: req.body.trip });
-  user.save(function(err){
-    res.json(user);
-  })
- })
+  var trip = new Trip(req.body);
+  trip.stops = [];
+  trip.userId = req.user.id;
+  trip.save(function(err, trip){
+    if (err) return res.status(401).json({msg: 'Failed to save Trip'});
+    res.status(201).json(trip);
+ });
 }
 
 function del(req, res) {
-  User.findById(req.user.id, function(err, user){
-    user.trips.pop();
-    user.save(function(err){
-      res.json(user);
+  Trip.findByIdAndRemove(req.params.tripId, function(err, trip){
+    trip.pop();
+    trip.save(function(err){
+      res.json(trip);
     })
   })
 }

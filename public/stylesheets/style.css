@@ -48,24 +48,6 @@ html, body {
   padding: 0;
 }
 
-div#inputDiv {
-  margin-top: 250px;
-  padding-right: 250px;
-  text-align: right;
-  width: 500px;
-}
-
-#origin-row {
-  margin-bottom: 25px;
-  width: 200%;
-  height: 200%;
-}
-
-#destination-row {
-  width: 200%;
-  height: 200%;
-}
-
 ul {
   list-style-type: none;
 }
@@ -127,8 +109,4 @@ ul {
   margin-top: 100px;
   font-family: 'Lato', sans-serif;
   font-size: 14px;
-}
-
-#start {
-  height: 500px;
 }
