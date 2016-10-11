@@ -37,24 +37,6 @@ html, body {
   padding: 0;
 }
 
-div#inputDiv {
-  margin-top: 250px;
-  padding-right: 250px;
-  text-align: right;
-  width: 500px;
-}
-
-#origin-row {
-  margin-bottom: 25px;
-  width: 200%;
-  height: 200%;
-}
-
-#destination-row {
-  width: 200%;
-  height: 200%;
-}
-
 ul {
   list-style-type: none;
 }
@@ -120,4 +102,37 @@ ul {
 
 #start {
   height: 500px;
+  background-image: url("/images/start_night2.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: .9;
+}
+
+div#inputDiv {
+  padding-right: 250px;
+  text-align: right;
+  width: 500px;
+}
+
+#origin-row {
+  margin-bottom: 25px;
+  width: 200%;
+  height: 200%;
+}
+
+#origin {
+  background-color:rgba(0, 0, 0, 0);
+  color:#E4B100;
+  border: #E4B100;
+  outline: #E4B100;
+  height:50px;
+  transition:height 1s;
+  -webkit-transition:height 1s
+}
+
+#destination-row {
+  width: 200%;
+  height: 200%;
 }
