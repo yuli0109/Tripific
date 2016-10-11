@@ -23,7 +23,8 @@ var stopSchema = new mongoose.Schema({
 var tripSchema = new mongoose.Schema({
   created: { type: Date, default: Date.now },
   tripDate: Date,
-  route: String,
+  origin: String,
+  destination: String,
   userId: {type: ObjectId, ref: 'User'},
   stops:[stopSchema],
 });
