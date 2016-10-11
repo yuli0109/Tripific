@@ -38,13 +38,86 @@ html, body {
 }
 
 div#inputDiv {
-  margin: 0 auto;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 250px;
+  padding-right: 250px;
   text-align: right;
   width: 500px;
 }
 
+#origin-row {
+  margin-bottom: 25px;
+  width: 200%;
+  height: 200%;
+}
+
+#destination-row {
+  width: 200%;
+  height: 200%;
+}
+
 ul {
   list-style-type: none;
+}
+
+.parallax {
+  background-image: url("/images/road.jpg");
+  height: 700px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: .9;
+}
+
+
+
+#logout {
+  border-color: #F7F7EF;
+  color: #F7F7EF;
+  background-color: none;
+  align-self: right;
+}
+
+#tripific {
+  font-size: 62px;
+  letter-spacing: 2px;
+  font-family: 'Shrikhand', sans-serif;
+  color: #FBF3E6;
+}
+
+#home-text {
+  font-family: 'Oxygen', sans-serif;
+  color: #F7F7EF;
+  text-align: center;
+  margin-top: 180px;
+}
+
+#btn-start {
+  background-color: #13BB7E;
+  color: #F7F7EF;
+  margin-top: 35px;
+}
+
+#about {
+  background-color: #181818;
+  color: #F7F7EF;
+  height: 300px;
+}
+
+.columns {
+  margin-bottom: 25px;
+}
+
+.icons {
+  margin-bottom: 25px;
+}
+
+#about-text {
+  margin-top: 100px;
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+}
+
+#start {
+  height: 500px;
 }

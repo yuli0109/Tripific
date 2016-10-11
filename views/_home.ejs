@@ -1,0 +1,23 @@
+<div id="home" class="parallax">
+
+<header id="header" class="">
+    <ul class="right">
+      <% if (user) { %>
+      <a href="/logout" id="logout" class="btn"><img src="" alt="">Logout</a></button>
+      <% } else { %>
+      <a href="/auth/google"><img src="./images/googlebtn.png" alt="Login with Google"></a>
+      <% } %>
+    </ul>
+</header>
+
+  <div id="home-text" class="text-vcenter">
+
+    <div id="frame-top"></div>
+    <h1 id="tripific">Tripific</h1>
+    <div id="frame-bottom"></div>
+
+    <a href="#" id="btn-start" class="btn btn-lg btn-outline-secondary">Plan a road trip</a>
+
+  </div>
+
+</div>

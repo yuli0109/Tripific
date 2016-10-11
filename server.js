@@ -9,6 +9,7 @@ var passport = require('passport');
 
 var routes = require('./routes/index');
 var google = require('./routes/google-maps');
+var yelp_route = require('./routes/yelp');
 
 var app = express();
 
@@ -37,6 +38,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/', google);
+app.use('/', yelp_route);
 
 console.log(app.get('env'));
 
