@@ -1,4 +1,20 @@
 #restaurant_page {
-  height: 70%;
-  width: 90%;
+  margin: 0 auto;
+  height: 100%;
+  width:  100%;
+  background-image: url("http://wallpapercave.com/wp/ZDRooQC.jpg");
+  background-size: cover;
+}
+
+#restaurant_filter {
+  height: 80%;
+  width: 30%;
+  margin-left: 3%;
+  margin-top: 5%;
+}
+
+#restaurant_list {
+  height: 80%;
+  width: 65%;
+  margin-top: 5%
 }
