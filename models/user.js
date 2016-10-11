@@ -6,7 +6,6 @@ var ObjectId = mongoose.Schema.Types.ObjectId;
 var userSchema = new mongoose.Schema({
   name: String,
   email: String,
-  trips: [{type: ObjectId, ref: 'Trip'}],
   googleId: String,
   created: { type: Date, default: Date.now }
 });
