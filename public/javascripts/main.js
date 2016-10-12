@@ -8,6 +8,8 @@ var currentMark = {lat: 34.08, lng: -118.14};
 var searchBusinessResult = [];
 var currentTrip = {};
 var currentStopId = "";
+var currentActivity = "";
+var currentBusType = "";
 
 function initMap() {
   var autocomplete_orgin = new google.maps.places.Autocomplete(document.getElementById('origin'));
@@ -44,7 +46,6 @@ function initMap() {
     })
     .done(function(data) {
       currentTrip = data;
-      console.log("The marker are now all on trip_id:" + currentTrip);
     })
   });
 
@@ -80,14 +81,14 @@ function initMap() {
         }
       })
       .done(function(data) {
-        console.log(data);
+        currentTrip = data;;
         markers.forEach(function(marker, i){
           marker.stopId = data.stops[i]._id;
         })
         currentStopId = data._id;
         console.log(markers);
       })
-    //Add listener to left click on marker
+    //Add listener to right click on marker
     google.maps.event.addListener(marker, 'rightclick', function(mouseEvent) {
       markToDelete = markers.filter(function(elm) {
         return elm.marker.uid == marker.uid;
@@ -99,7 +100,7 @@ function initMap() {
         method: "DELETE"
       })
       .done(function(data) {
-        console.log(data);
+        currentTrip = data;
       })
       //Remove marker object in marker array
       markers = markers.filter(function(elm){
@@ -114,7 +115,7 @@ function initMap() {
       // console.log(`Waypath after delete: ${waypts}`);
       calculateAndDisplayRoute(directionsService, directionsDisplay)
     });
-    //Add listener to right click on marker
+    //Add listener to left click on marker
     google.maps.event.addListener(marker, 'click', function(mouseEvent) {
       currentMark = {
         lat: marker.getPosition().lat(),
@@ -122,6 +123,9 @@ function initMap() {
       }
       console.log(currentMark);
       $('#activities_modal').modal('toggle');
+      markToAddAct = markers.filter(function(elm) {
+        return elm.marker.uid == marker.uid;
+      });
     });
     //Push the marker object to markers array
     markers.push({
@@ -184,7 +188,7 @@ $("li > a.page-numbers").on('click', function(event) {
 //Function for searching business
 function searchBusiness (term) {
   // console.log(term);
-  console.log($("#price_selection").val().join());
+  // console.log($("#price_selection").val().join());
   $.ajax({
     url: '/yelp/search',
     dataType: 'json',
@@ -210,6 +214,7 @@ function renderBusiness (pageNumb) {
       for (let i = 0; i < 5; i++) {
         $(`#media${i+1} > * img.img-flag`).attr('src', searchBusinessResult[i].img_url);
         $(`#media${i+1} > * h4`).text(searchBusinessResult[i].text);
+        $(`#media${i+1} > * h3`).text(searchBusinessResult[i].id);
         $(`#media${i+1} > * td.select_address`).text(searchBusinessResult[i].address);
         $(`#media${i+1} > * td.select_price`).text(searchBusinessResult[i].price);
         renderRating(i+1, searchBusinessResult[i].rating)
@@ -219,6 +224,7 @@ function renderBusiness (pageNumb) {
       for (let i = 0, j=5; i < 5; i++, j++) {
         $(`#media${i+1} > * img.img-flag`).attr('src', searchBusinessResult[j].img_url);
         $(`#media${i+1} > * h4`).text(searchBusinessResult[j].text);
+        $(`#media${i+1} > * h3`).text(searchBusinessResult[j].id);
         $(`#media${i+1} > * td.select_address`).text(searchBusinessResult[j].address);
         $(`#media${i+1} > * td.select_price`).text(searchBusinessResult[j].price);
         renderRating(i+1, searchBusinessResult[j].rating)
@@ -228,6 +234,7 @@ function renderBusiness (pageNumb) {
       for (let i = 0, j = 10; i < 5; i++, j++) {
         $(`#media${i+1} > * img.img-flag`).attr('src', searchBusinessResult[j].img_url);
         $(`#media${i+1} > * h4`).text(searchBusinessResult[j].text);
+        $(`#media${i+1} > * h3`).text(searchBusinessResult[j].id);
         $(`#media${i+1} > * td.select_address`).text(searchBusinessResult[j].address);
         $(`#media${i+1} > * td.select_price`).text(searchBusinessResult[j].price);
         renderRating(i+1, searchBusinessResult[j].rating)
@@ -237,6 +244,7 @@ function renderBusiness (pageNumb) {
       for (let i = 0, j = 15; i < 5; i++, j++) {
         $(`#media${i+1} > * img.img-flag`).attr('src', searchBusinessResult[j].img_url);
         $(`#media${i+1} > * h4`).text(searchBusinessResult[j].text);
+        $(`#media${i+1} > * h3`).text(searchBusinessResult[j].id);
         $(`#media${i+1} > * td.select_address`).text(searchBusinessResult[j].address);
         $(`#media${i+1} > * td.select_price`).text(searchBusinessResult[j].price);
         renderRating(i+1, searchBusinessResult[j].rating)
@@ -246,6 +254,7 @@ function renderBusiness (pageNumb) {
       for (let i = 0, j = 20; i < 5; i++, j++) {
         $(`#media${i+1} > * img.img-flag`).attr('src', searchBusinessResult[j].img_url);
         $(`#media${i+1} > * h4`).text(searchBusinessResult[j].text);
+        $(`#media${i+1} > * h3`).text(searchBusinessResult[j].id);
         $(`#media${i+1} > * td.select_address`).text(searchBusinessResult[j].address);
         $(`#media${i+1} > * td.select_price`).text(searchBusinessResult[j].price);
         renderRating(i+1, searchBusinessResult[j].rating)
@@ -296,5 +305,39 @@ function renderRating (mediaNum, rating) {
 //Function for toggleing restaurant modal
 function reataurantToggle(){
   $('#restaurant_modal').modal('toggle')
+  currentBusType = "restaurant";
+}
+//Function for toggleing restaurant modal
+function shoppingToggle(){
+  $('#shopping_modal').modal('toggle')
+  currentBusType = "shopping";
+  searchBusiness('shopping')
+}
+//Function for toggleing confirm modal
+function confirmToggle(event){
+  $('#confirm_modal').modal('toggle')
+  currentActivity = $(event).closest('div.media').find('h3').text();
+}
+
+//Function to execute when confirmed
+function doAddAct(){
+  $.ajax({
+    url: `/stops/${markToAddAct[0].stopId}/activities`,
+    dataType: 'json',
+    method: "POST",
+    data: {
+      businessType: currentBusType,
+      businessName: "business_name",
+      businessId: currentActivity,
+      lat: currentMark.lat,
+      lng: currentMark.lng
+    }
+  })
+  .done(function(data) {
+    currentTrip = data;
+    $('#confirm_modal').modal('hide');
+    $('#restaurant_modal').modal('hide');
+    $('#shopping_modal').modal('hide');
+  })
 }
 

@@ -1,56 +1,9 @@
-<div id="restaurant_modal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+<div id="shopping_modal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
-      <section id="restaurant_page">
-        <div class="row" id="restaurant_partial">
-          <div class="container col-md-3" id="restaurant_filter">
-            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingOne">
-                  <h4 class="panel-title">
-                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                      Cuisine
-                    </a>
-                  </h4>
-                </div>
-                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                  <div class="panel-body">
-                    <div class="list-group">
-                      <button type="button" class="list-group-item" onclick="searchBusiness('Steak')">American</button>
-                      <button type="button" class="list-group-item" onclick="searchBusiness('Barbeque')">Brazilian</button>
-                      <button type="button" class="list-group-item" onclick="searchBusiness('Chinese_food')">Chinese</button>
-                      <button type="button" class="list-group-item" onclick="searchBusiness('French_food')">French</button>
-                      <button type="button" class="list-group-item" onclick="searchBusiness('Italian_food')">Italian</button>
-                      <button type="button" class="list-group-item" onclick="searchBusiness('sushi')">Japanese</button>
-                      <button type="button" class="list-group-item" onclick="searchBusiness('Korean')">Korean</button>
-                      <button type="button" class="list-group-item" onclick="searchBusiness('Taco')">Mexican</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingTwo">
-                  <h4 class="panel-title">
-                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                      Price
-                    </a>
-                  </h4>
-                </div>
-                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                  <div class="panel-body">
-                    <select id="price_selection" class="js-example-basic-multiple form-control" multiple="multiple">
-                      <option value='1'>$</option>
-                      <option value='2' selected="selected">$$</option>
-                      <option value='3'>$$$</option>
-                      <option value='4'>$$$$</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="container col-lg-8 pre-scrollable" id="restaurant_list">
+      <section id="shopping_page">
+        <div class="row" id="shopping_partial">
+          <div class="container col-lg-8 pre-scrollable" id="shopping_list">
             <div class="list-group">
               <div class="media list-group-item" id="media1">
                 <div class="media-left">
