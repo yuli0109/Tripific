@@ -4,7 +4,7 @@ console.log('linked!');
 
 var los_angeles = {lat: 34.06, lng: -118.24};
 var waypts = [];
-var currentMark = 90012;
+var currentMark = {lat: 34.08, lng: -118.14};
 var searchBusinessResult = [];
 
 function initMap() {
@@ -64,7 +64,11 @@ function initMap() {
     });
     //Add listener to right click on marker
     google.maps.event.addListener(marker, 'rightclick', function(mouseEvent) {
-      alert('Right click triggered');
+      currentMark = {
+        lat: marker.getPosition().lat(),
+        lng: marker.getPosition().lng()
+      }
+      console.log(currentMark);
     });
     //Push the marker object to markers array
     markers.push({
