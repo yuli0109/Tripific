@@ -31,7 +31,7 @@ function initMap() {
   //Saving the trip on user
   $("#goBtn").on('click', function(event) {
     $.ajax({
-    url: '/api/trips',
+    url: '/trips',
     dataType: 'json',
     method: "POST",
     data: {
