@@ -48,7 +48,7 @@ function initMap() {
     //Assign id to the marker
     marker.uid = markerId;
     //Add listener to left click on marker
-    google.maps.event.addListener(marker, 'click', function(mouseEvent) {
+    google.maps.event.addListener(marker, 'rightclick', function(mouseEvent) {
       //Remove marker object in marker array
       markers = markers.filter(function(elm){
         return elm.marker.uid != marker.uid
@@ -63,7 +63,7 @@ function initMap() {
       calculateAndDisplayRoute(directionsService, directionsDisplay)
     });
     //Add listener to right click on marker
-    google.maps.event.addListener(marker, 'rightclick', function(mouseEvent) {
+    google.maps.event.addListener(marker, 'click', function(mouseEvent) {
       currentMark = {
         lat: marker.getPosition().lat(),
         lng: marker.getPosition().lng()
