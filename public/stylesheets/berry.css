@@ -38,13 +38,23 @@ img.img-flag {
 }
 
 #price_selection {
-  width: 300px;
+  width: 200px;
 }
 
 #restaurant_page_nav {
   width: 30%;
 }
 
+ul.pagination {
+  width: 500px;
+}
+
 li > a:hover {
   cursor: pointer;
+}
+
+#marker_container {
+  height: 100%;
+  width: 100%;
+  background-color: black;
 }

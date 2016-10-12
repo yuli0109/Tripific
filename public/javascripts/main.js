@@ -4,7 +4,7 @@ console.log('linked!');
 
 var los_angeles = {lat: 34.06, lng: -118.24};
 var waypts = [];
-var currentMark = 90012;
+var currentMark = {lat: 34.08, lng: -118.14};
 var searchBusinessResult = [];
 
 function initMap() {
@@ -48,7 +48,7 @@ function initMap() {
     //Assign id to the marker
     marker.uid = markerId;
     //Add listener to left click on marker
-    google.maps.event.addListener(marker, 'click', function(mouseEvent) {
+    google.maps.event.addListener(marker, 'rightclick', function(mouseEvent) {
       //Remove marker object in marker array
       markers = markers.filter(function(elm){
         return elm.marker.uid != marker.uid
@@ -63,8 +63,13 @@ function initMap() {
       calculateAndDisplayRoute(directionsService, directionsDisplay)
     });
     //Add listener to right click on marker
-    google.maps.event.addListener(marker, 'rightclick', function(mouseEvent) {
-      alert('Right click triggered');
+    google.maps.event.addListener(marker, 'click', function(mouseEvent) {
+      currentMark = {
+        lat: marker.getPosition().lat(),
+        lng: marker.getPosition().lng()
+      }
+      console.log(currentMark);
+      $('#activities_modal').modal('toggle');
     });
     //Push the marker object to markers array
     markers.push({
@@ -233,3 +238,7 @@ function renderRating (mediaNum, rating) {
   }
 }
 
+//Function for toggleing restaurant modal
+function reataurantToggle(){
+  $('#restaurant_modal').modal('toggle')
+}
