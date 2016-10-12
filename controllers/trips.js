@@ -1,6 +1,7 @@
 var Trip = require('../models/trip');
 
 module.exports = {
+  index: index,
   show: show,
   create: create,
   delete: del
@@ -8,12 +9,20 @@ module.exports = {
 
  //need to use populate('').exec(function(err, user)) req.body(json body parser)
 
-function show(req, res) {
+function index(req, res) {
   Trip.findBy({userId: req.user.id}, function(err, trips) {
     if (err) return res.status(401).json({msg: 'Failed to retrieve Trips'});
     res.status(200).json(trips);
   });
 }
+
+function show(req, res) {
+  Trip.findOne(req.user.id).sort({_id: -1}).exec(function(err, trip){
+   if (err) return res.status(401).json({msg: 'Failed to retrieve Trips'});
+    res.status(200).json(trip);
+  });
+}
+
 
 function create(req, res) {
   var trip = new Trip(req.body);
