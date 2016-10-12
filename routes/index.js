@@ -22,7 +22,7 @@ router.post('/trips/:tripId/stops', stopsCtrl.createStop)
 
 
 // Delete Stop route
-router.delete('/stops/:id', stopsCtrl.removeStop)
+router.delete('/stops/:stopId', stopsCtrl.removeStop)
 
 // Trip Create Route
 router.post('/trips' , tripsCtrl.create)
