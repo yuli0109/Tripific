@@ -10,34 +10,47 @@
   <link href="https://fonts.googleapis.com/css?family=Shrikhand|Lato" rel="stylesheet">
   <script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 </head>
-<body>
+<body id="itinerary-body">
 
-  <h1><%= trip.origin %> to <%= trip.destination %> Itinerary</h1>
+<header>
+  <h1 id="itinerary-logo"><a id="itinerary-logo2" href="/">Tripific</a></h1>
+  <h2><%= trip.origin %> &nbsp&nbsp <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> &nbsp&nbsp <%= trip.destination %></h1>
+  <h3><%= trip.tripDate %></h2>
+  <hr>
+</header>
 
-  <table class="table">
-  <tbody>
-    <tr>
-    <% trip.stops.forEach(function(stops){ %>
-      <th scope="row"></th>
-      <td><%= trip.stop.name %></td>
-      <td></td>
-    </tr>
-    <tr>
-      <th scope="row"></th>
-      <% trip.stop.activities.forEach(function(activities){ %>
-      <td></td>
-      <td><%= trip.stop.activity.name %></td>
-      <td><a href=""><img src="/images/x-mark-3-32.png" alt=""></a></td>
+  <!-- TODO this renders same map, but we need to get markers from trip the db -->
+  <div class="col-md-6 itinerary-map" id="map_container">
+      <div id="map"></div>
+  </div>
+
+
+  <table id="itinerary-table" class="table">
+      <% trip.stops.forEach(function(stop){ %>
+    <thead>
+      <tr>
+        <th scope="row"><%= stop.name %></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+        <% stop.activities.forEach(function(activity){ %>
+      <tr>
+        <th scope="row"></th>
+        <td><%= activity.name %></td>
+        <td><a href=""><img src="/images/icons/x-mark-3-32.png" alt=""></a></td>
+      </tr>
         <% }) %>
-    <% }) %>
-    </tr>
-  </tbody>
-</table>
+    </tbody>
+      <% }) %>
+  </table>
 
 
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script src="../javascripts/main.js"></script>
+<!-- change callback from init map to something else to render markers from DB -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCSPeNs4RKje84chLxyLJKBdv_kf9gY7E&libraries=drawing,places&callback=initMap"
         async defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
