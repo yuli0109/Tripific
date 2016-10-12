@@ -40,6 +40,18 @@ div#inputDiv {
   width: 300px;
 }
 
+#dt-picker {
+  margin-top: 25px;
+  background-color:rgba(0, 0, 0, 0);
+  height:50px;
+  width: 300px;
+  color: #B1B1B1;
+}
+
+#dt-label {
+  margin-top: 25px;
+}
+
 #destination-row {
   width: 200%;
   height: 200%;
