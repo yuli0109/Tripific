@@ -69,6 +69,7 @@ function initMap() {
         lng: marker.getPosition().lng()
       }
       console.log(currentMark);
+      $('#activities_modal').modal('toggle');
     });
     //Push the marker object to markers array
     markers.push({
@@ -237,3 +238,7 @@ function renderRating (mediaNum, rating) {
   }
 }
 
+//Function for toggleing restaurant modal
+function reataurantToggle(){
+  $('#restaurant_modal').modal('toggle')
+}
