@@ -13,14 +13,14 @@
           <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
             <div class="panel-body">
               <div class="list-group">
-                <button type="button" class="list-group-item" onclick="searchBusiness('American')">American</button>
-                <button type="button" class="list-group-item" onclick="searchBusiness('Brazilian')">Brazilian</button>
-                <button type="button" class="list-group-item" onclick="searchBusiness('Chinese')">Chinese</button>
-                <button type="button" class="list-group-item" onclick="searchBusiness('French')">French</button>
-                <button type="button" class="list-group-item" onclick="searchBusiness('Italian')">Italian</button>
-                <button type="button" class="list-group-item" onclick="searchBusiness('Japanese')">Japanese</button>
-                <button type="button" class="list-group-item" onclick="searchBusiness('Korean')">Korean</button>
-                <button type="button" class="list-group-item" onclick="searchBusiness('Mexican')">Mexican</button>
+                <button type="button" class="list-group-item" onclick="searchBusiness('American food')">American</button>
+                <button type="button" class="list-group-item" onclick="searchBusiness('Brazilian food')">Brazilian</button>
+                <button type="button" class="list-group-item" onclick="searchBusiness('Chinese food')">Chinese</button>
+                <button type="button" class="list-group-item" onclick="searchBusiness('French food')">French</button>
+                <button type="button" class="list-group-item" onclick="searchBusiness('Italian food')">Italian</button>
+                <button type="button" class="list-group-item" onclick="searchBusiness('Japanese food')">Japanese</button>
+                <button type="button" class="list-group-item" onclick="searchBusiness('Korean food')">Korean</button>
+                <button type="button" class="list-group-item" onclick="searchBusiness('Mexican food')">Mexican</button>
               </div>
             </div>
           </div>
@@ -36,10 +36,10 @@
           <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
             <div class="panel-body">
               <select id="price_selection" class="js-example-basic-multiple form-control" multiple="multiple">
-                <option value=1>$</option>
-                <option value=2>$$</option>
-                <option value=3>$$$</option>
-                <option value=4>$$$$</option>
+                <option value='1'>$</option>
+                <option value='2'>$$</option>
+                <option value='3'>$$$</option>
+                <option value='4'>$$$$</option>
               </select>
             </div>
           </div>
@@ -49,7 +49,7 @@
 
     <div class="container col-lg-8 pre-scrollable" id="restaurant_list">
       <div class="list-group">
-        <div class="media list-group-item">
+        <div class="media list-group-item" id="media1">
           <div class="media-left">
             <a href="#">
               <img class="media-object img-flag" src="/images/loadings/progress-loading.gif">
@@ -60,7 +60,7 @@
             <table class="table table-striped">
               <tr>
                 <td>Address:</td>
-                <td id="select_address">Loading...</td>
+                <td class="select_address">Loading...</td>
               </tr>
               <tr>
                 <td>Rating:</td>
@@ -75,12 +75,12 @@
               </tr>
               <tr>
                 <td>Price:</td>
-                <td id="select_price">Loading:</td>
+                <td class="select_price">Loading:</td>
               </tr>
             </table>
           </div>
         </div>
-        <div class="media list-group-item">
+        <div class="media list-group-item" id="media2">
           <div class="media-left">
             <a href="#">
               <img class="media-object img-flag" src="/images/loadings/progress-loading.gif">
@@ -91,7 +91,7 @@
             <table class="table table-striped">
               <tr>
                 <td>Address:</td>
-                <td id="select_address">Loading...</td>
+                <td class="select_address">Loading...</td>
               </tr>
               <tr>
                 <td>Rating:</td>
@@ -106,12 +106,12 @@
               </tr>
               <tr>
                 <td>Price:</td>
-                <td id="select_price">Loading:</td>
+                <td class="select_price">Loading:</td>
               </tr>
             </table>
           </div>
         </div>
-        <div class="media list-group-item">
+        <div class="media list-group-item" id="media3">
           <div class="media-left">
             <a href="#">
               <img class="media-object img-flag" src="/images/loadings/progress-loading.gif">
@@ -122,7 +122,7 @@
             <table class="table table-striped">
               <tr>
                 <td>Address:</td>
-                <td id="select_address">Loading...</td>
+                <td class="select_address">Loading...</td>
               </tr>
               <tr>
                 <td>Rating:</td>
@@ -137,12 +137,12 @@
               </tr>
               <tr>
                 <td>Price:</td>
-                <td id="select_price">Loading:</td>
+                <td class="select_price">Loading:</td>
               </tr>
             </table>
           </div>
         </div>
-        <div class="media list-group-item">
+        <div class="media list-group-item" id="media4">
           <div class="media-left">
             <a href="#">
               <img class="media-object img-flag" src="/images/loadings/progress-loading.gif">
@@ -153,7 +153,7 @@
             <table class="table table-striped">
               <tr>
                 <td>Address:</td>
-                <td id="select_address">Loading...</td>
+                <td class="select_address">Loading...</td>
               </tr>
               <tr>
                 <td>Rating:</td>
@@ -168,12 +168,12 @@
               </tr>
               <tr>
                 <td>Price:</td>
-                <td id="select_price">Loading:</td>
+                <td class="select_price">Loading:</td>
               </tr>
             </table>
           </div>
         </div>
-        <div class="media list-group-item">
+        <div class="media list-group-item" id="media5">
           <div class="media-left">
             <a href="#">
               <img class="media-object img-flag" src="/images/loadings/progress-loading.gif">
@@ -184,7 +184,7 @@
             <table class="table table-striped">
               <tr>
                 <td>Address:</td>
-                <td id="select_address">Loading...</td>
+                <td class="select_address">Loading...</td>
               </tr>
               <tr>
                 <td>Rating:</td>
@@ -199,7 +199,7 @@
               </tr>
               <tr>
                 <td>Price:</td>
-                <td id="select_price">Loading:</td>
+                <td ="select_price">Loading:</td>
               </tr>
             </table>
           </div>
@@ -207,13 +207,13 @@
       </div>
         <nav aria-label="Page navigation" id="restaurant_page_nav" class="center-block">
           <ul class="pagination">
-            <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
-            <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
-            <li class=""><a href="#">2<span class="sr-only">(current)</span></a></li>
-            <li class=""><a href="#">3<span class="sr-only">(current)</span></a></li>
-            <li class=""><a href="#">4<span class="sr-only">(current)</span></a></li>
-            <li class=""><a href="#">5<span class="sr-only">(current)</span></a></li>
-            <li class=""><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+            <li id="previousBtn" class="disabled"><a aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+            <li class="active"><a class="page-numbers" onclick="renderBusiness(1)">1<span class="sr-only">(current)</span></a></li>
+            <li class=""><a class="page-numbers" onclick="renderBusiness(2)">2<span class="sr-only">(current)</span></a></li>
+            <li class=""><a class="page-numbers" onclick="renderBusiness(3)">3<span class="sr-only">(current)</span></a></li>
+            <li class=""><a class="page-numbers" onclick="renderBusiness(4)">4<span class="sr-only">(current)</span></a></li>
+            <li class=""><a class="page-numbers" onclick="renderBusiness(5)">5<span class="sr-only">(current)</span></a></li>
+            <li id="nextBtn" class=""><a aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
           </ul>
         </nav>
     </div>

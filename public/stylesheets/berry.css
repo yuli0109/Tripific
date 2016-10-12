@@ -44,3 +44,7 @@ img.img-flag {
 #restaurant_page_nav {
   width: 30%;
 }
+
+li > a:hover {
+  cursor: pointer;
+}
