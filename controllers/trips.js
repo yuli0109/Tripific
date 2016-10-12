@@ -1,14 +1,14 @@
 var Trip = require('../models/trip');
 
 module.exports = {
-  index: index,
+  show: show,
   create: create,
   delete: del
 };
 
  //need to use populate('').exec(function(err, user)) req.body(json body parser)
 
-function index(req, res) {
+function show(req, res) {
   Trip.findBy({userId: req.user.id}, function(err, trips) {
     if (err) return res.status(401).json({msg: 'Failed to retrieve Trips'});
     res.status(200).json(trips);
