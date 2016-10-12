@@ -3,12 +3,19 @@ console.log('linked!');
 //AIzaSyCCSPeNs4RKje84chLxyLJKBdv_kf9gY7E
 
 var los_angeles = {lat: 34.06, lng: -118.24};
+//Way points array
 var waypts = [];
+//Initialize the marker coordiates
 var currentMark = {lat: 34.08, lng: -118.14};
+//Results back from yelp api
 var searchBusinessResult = [];
-var curntTrip = {};
+var currentTrip = {};
+//Current stop(marker) on click for storing stopId
 var currentStopId = "";
+//Current Activity on click on rest/shopping modal, for saving activitees id
 var currentActivity = "";
+//Current business type on click in act_style modal, for activities save
+var currentBusType = "";
 
 
 
@@ -23,7 +30,87 @@ function initMap() {
   var markerId = 0;
    map = new google.maps.Map(document.getElementById('map'), {
     zoom: 9,
-    center: los_angeles
+    center: los_angeles,
+    styles: [
+              {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
+              {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
+              {elementType: 'labels.text.fill', stylers: [{color: '#746855'}]},
+              {
+                featureType: 'administrative.locality',
+                elementType: 'labels.text.fill',
+                stylers: [{color: '#d59563'}]
+              },
+              {
+                featureType: 'poi',
+                elementType: 'labels.text.fill',
+                stylers: [{color: '#d59563'}]
+              },
+              {
+                featureType: 'poi.park',
+                elementType: 'geometry',
+                stylers: [{color: '#263c3f'}]
+              },
+              {
+                featureType: 'poi.park',
+                elementType: 'labels.text.fill',
+                stylers: [{color: '#6b9a76'}]
+              },
+              {
+                featureType: 'road',
+                elementType: 'geometry',
+                stylers: [{color: '#38414e'}]
+              },
+              {
+                featureType: 'road',
+                elementType: 'geometry.stroke',
+                stylers: [{color: '#212a37'}]
+              },
+              {
+                featureType: 'road',
+                elementType: 'labels.text.fill',
+                stylers: [{color: '#9ca5b3'}]
+              },
+              {
+                featureType: 'road.highway',
+                elementType: 'geometry',
+                stylers: [{color: '#746855'}]
+              },
+              {
+                featureType: 'road.highway',
+                elementType: 'geometry.stroke',
+                stylers: [{color: '#1f2835'}]
+              },
+              {
+                featureType: 'road.highway',
+                elementType: 'labels.text.fill',
+                stylers: [{color: '#f3d19c'}]
+              },
+              {
+                featureType: 'transit',
+                elementType: 'geometry',
+                stylers: [{color: '#2f3948'}]
+              },
+              {
+                featureType: 'transit.station',
+                elementType: 'labels.text.fill',
+                stylers: [{color: '#d59563'}]
+              },
+              {
+                featureType: 'water',
+                elementType: 'geometry',
+                stylers: [{color: '#17263c'}]
+              },
+              {
+                featureType: 'water',
+                elementType: 'labels.text.fill',
+                stylers: [{color: '#515c6d'}]
+              },
+              {
+                featureType: 'water',
+                elementType: 'labels.text.stroke',
+                stylers: [{color: '#17263c'}]
+              }
+          ]
   });
 
   directionsDisplay.setMap(map);
@@ -46,8 +133,7 @@ function initMap() {
       }
     })
     .done(function(data) {
-      curntTrip = data;
-      console.log("The marker are now all on trip_id:" + currentTrip);
+      currentTrip = data;
     })
   });
 
@@ -83,7 +169,7 @@ function initMap() {
         }
       })
       .done(function(data) {
-        curntTrip = data;
+        currentTrip = data;;
         markers.forEach(function(marker, i){
           marker.stopId = data.stops[i]._id;
         })
@@ -102,7 +188,7 @@ function initMap() {
         method: "DELETE"
       })
       .done(function(data) {
-        curntTrip = data;
+        currentTrip = data;
       })
       //Remove marker object in marker array
       markers = markers.filter(function(elm){
@@ -170,6 +256,7 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
     });
 }
 
+
 //Import the select2 Library for select bar
 $(".js-example-basic-multiple").select2();
 
@@ -189,7 +276,7 @@ $("li > a.page-numbers").on('click', function(event) {
 //Function for searching business
 function searchBusiness (term) {
   // console.log(term);
-  console.log($("#price_selection").val().join());
+  // console.log($("#price_selection").val().join());
   $.ajax({
     url: '/yelp/search',
     dataType: 'json',
@@ -306,7 +393,20 @@ function renderRating (mediaNum, rating) {
 //Function for toggleing restaurant modal
 function reataurantToggle(){
   $('#restaurant_modal').modal('toggle')
+  currentBusType = "restaurant";
 }
+//Function for toggleing shopping modal
+function shoppingToggle(){
+  $('#shopping_modal').modal('toggle')
+  currentBusType = "shopping";
+  searchBusiness('shopping')
+}
+//Function for toggleing recreation modal
+function recreationToggle(){
+  $('#recreation_modal').modal('toggle')
+  currentBusType = "recreation";
+}
+
 //Function for toggleing confirm modal
 function confirmToggle(event){
   $('#confirm_modal').modal('toggle')
@@ -320,7 +420,7 @@ function doAddAct(){
     dataType: 'json',
     method: "POST",
     data: {
-      businessType: "restaurant",
+      businessType: currentBusType,
       businessName: "business_name",
       businessId: currentActivity,
       lat: currentMark.lat,
@@ -328,9 +428,10 @@ function doAddAct(){
     }
   })
   .done(function(data) {
-    curntTrip = data;
+    currentTrip = data;
     $('#confirm_modal').modal('hide');
     $('#restaurant_modal').modal('hide');
+    $('#shopping_modal').modal('hide');
+    $('#recreation_modal').modal('hide');
   })
 }
-

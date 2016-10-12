@@ -1,29 +1,29 @@
-<div id="restaurant_modal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+<div id="recreation_modal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
-      <section id="restaurant_page">
-        <div class="row" id="restaurant_partial">
-          <div class="container col-md-3" id="restaurant_filter">
+      <section id="recreation_page">
+        <div class="row" id="recreation_partial">
+          <div class="container col-md-3" id="recreation_filter">
             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
               <div class="panel panel-default">
                 <div class="panel-heading" role="tab" id="headingOne">
                   <h4 class="panel-title">
                     <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                      Cuisine
+                      Class
                     </a>
                   </h4>
                 </div>
                 <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                   <div class="panel-body">
                     <div class="list-group">
-                      <button type="button" class="list-group-item" onclick="searchBusiness('Steak')">American</button>
-                      <button type="button" class="list-group-item" onclick="searchBusiness('Barbeque')">Brazilian</button>
-                      <button type="button" class="list-group-item" onclick="searchBusiness('Chinese_food')">Chinese</button>
-                      <button type="button" class="list-group-item" onclick="searchBusiness('French_food')">French</button>
-                      <button type="button" class="list-group-item" onclick="searchBusiness('Italian_food')">Italian</button>
-                      <button type="button" class="list-group-item" onclick="searchBusiness('sushi')">Japanese</button>
-                      <button type="button" class="list-group-item" onclick="searchBusiness('Korean')">Korean</button>
-                      <button type="button" class="list-group-item" onclick="searchBusiness('Taco')">Mexican</button>
+                      <button type="button" class="list-group-item" onclick="searchBusiness('badminton')">Badminton</button>
+                      <button type="button" class="list-group-item" onclick="searchBusiness('football')">Football</button>
+                      <button type="button" class="list-group-item" onclick="searchBusiness('camping')">Camping</button>
+                      <button type="button" class="list-group-item" onclick="searchBusiness('golf')">Golf</button>
+                      <button type="button" class="list-group-item" onclick="searchBusiness('ski')">Skiing</button>
+                      <button type="button" class="list-group-item" onclick="searchBusiness('fishing')">Fishing</button>
+                      <button type="button" class="list-group-item" onclick="searchBusiness('nightbar')">Night Bar</button>
+                      <button type="button" class="list-group-item" onclick="searchBusiness('salon')">Hair Styling</button>
                     </div>
                   </div>
                 </div>
@@ -213,7 +213,7 @@
                 </div>
               </div>
             </div>
-              <nav aria-label="Page navigation" id="restaurant_page_nav" class="center-block">
+              <nav aria-label="Page navigation" id="recreation_page_nav" class="center-block">
                 <ul class="pagination">
                   <li id="previousBtn" class="disabled"><a aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
                   <li class="active"><a class="page-numbers" onclick="renderBusiness(1)">1<span class="sr-only">(current)</span></a></li>
