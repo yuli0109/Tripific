@@ -7,6 +7,7 @@ var waypts = [];
 var currentMark = {lat: 34.08, lng: -118.14};
 var searchBusinessResult = [];
 var currentTrip = {};
+var currentStopId = "";
 
 function initMap() {
   var autocomplete_orgin = new google.maps.places.Autocomplete(document.getElementById('origin'));
@@ -36,7 +37,7 @@ function initMap() {
     dataType: 'json',
     method: "POST",
     data: {
-      tripDate: Date.parse("March 21, 2017"),
+      tripDate: $("#dt-picker").val(),
       origin: $("#origin").val(),
       destination: $("#dest").val()
       }
@@ -79,10 +80,27 @@ function initMap() {
         }
       })
       .done(function(data) {
-        console.log("Response from stop create:"+ data);
+        console.log(data);
+        markers.forEach(function(marker, i){
+          marker.stopId = data.stops[i]._id;
+        })
+        currentStopId = data._id;
+        console.log(markers);
       })
     //Add listener to left click on marker
     google.maps.event.addListener(marker, 'rightclick', function(mouseEvent) {
+      markToDelete = markers.filter(function(elm) {
+        return elm.marker.uid == marker.uid;
+      });
+      //Remove stops in database
+      $.ajax({
+        url: `/stops/${markToDelete[0].stopId}`,
+        dataType: 'json',
+        method: "DELETE"
+      })
+      .done(function(data) {
+        console.log(data);
+      })
       //Remove marker object in marker array
       markers = markers.filter(function(elm){
         return elm.marker.uid != marker.uid
@@ -108,8 +126,10 @@ function initMap() {
     //Push the marker object to markers array
     markers.push({
       id: markerId++,
-      marker: marker
+      marker: marker,
+      stopId: currentStopId
     });
+    console.log(markers);
     console.log(`Latitude: ${marker.getPosition().lat()}, Longitude: ${marker.getPosition().lng()}`);
     console.log(marker.getPosition());
     waypts.push({
