@@ -1,6 +1,6 @@
 ## Readme.md 
 
-TRIPIFIC
+# Tripific
 
     Tripific is a road trip planning application, designed to help you 
     get the mostout of your next road trip! By incorporating the the 
@@ -9,10 +9,11 @@ TRIPIFIC
     the waypoints you'd like to stop at throughout your trip. 
     See more, do more, and drive less!
 
-links:
-    Trello        https://trello.com/b/sUdF5Roq/project3-wdi
-    Heroku        fake heroku link.com 
-    Presentation  https://docs.google.com/presentation/d/18YgAXaNqtX2f3b1WrL2OQwlgdgIPqU77tQl8ne4ojLY/edit#slide=id.p
+Links:
+
+    Trello - https://trello.com/b/sUdF5Roq/project3-wdi
+    Heroku - fake heroku link.com 
+    Presentation - https://docs.google.com/presentation/d/18YgAXaNqtX2f3b1WrL2OQwlgdgIPqU77tQl8ne4ojLY/edit#slide=id.p
 
 Project 3 Team Members: 
 
@@ -23,14 +24,12 @@ Project 3 Team Members:
 
 Approach to Project:
     
-    As a team, we delegated tasks to individuals within the team, in 
-    order to modularize work and produce more efficiently.
+    As a team, we delegated tasks to individual members in 
+    order to modularize work and produce code more efficiently.
     We attempted to follow the Agile Work Flow process, making many 
     small adjustments while maintaining flexibility and continuous evolution 
     throughout the development stage. We also attempted to follow RESTful 
-    conventions when we created our application's routes.
-
-
+    conventions while creating our application's routes.
 
 Technologies Used: 
 
