@@ -1,24 +1,40 @@
 ## Readme.md 
 
-Project 3 - TRIPIFIC
+TRIPIFIC
 
-    Tripific is a road trip planning application, designed to help you get the most
-    out of your next road trip! By incorporating the the technologies available through Google Maps and Yelp, Tripific allows you to filter through specific Yelp categories to customize the waypoints you'd like to stop at throughout your trip. See more, do more, and drive less!
+    Tripific is a road trip planning application, designed to help you 
+    get the mostout of your next road trip! By incorporating the the 
+    technologies available through Google Maps and Yelp, Tripific 
+    allows you to filter through specific Yelp categories to customize
+    the waypoints you'd like to stop at throughout your trip. 
+    See more, do more, and drive less!
 
 links:
-    Trello  https://trello.com/b/sUdF5Roq/project3-wdi
-    Heroku  fake heroku link.com 
+    Trello        https://trello.com/b/sUdF5Roq/project3-wdi
+    Heroku        fake heroku link.com 
+    Presentation  https://docs.google.com/presentation/d/18YgAXaNqtX2f3b1WrL2OQwlgdgIPqU77tQl8ne4ojLY/edit#slide=id.p
 
-Project Team Members: 
+Project 3 Team Members: 
 
     Mondale Felix
     Victoria Kurzweg
     Clarissa Bitar
     Berry Zhong
 
+Approach to Project:
+    
+    As a team, we delegated tasks to individuals within the team, in 
+    order to modularize work and produce more efficiently.
+    We attempted to follow the Agile Work Flow process, making many 
+    small adjustments while maintaining flexibility and continuous evolution 
+    throughout the development stage. We also attempted to follow RESTful 
+    conventions when we created our application's routes.
+
+
+
 Technologies Used: 
 
-    HTML5 & CSS
+    HTML5 & CSS3
     Javascript
     NodeJS
     Express
@@ -43,16 +59,13 @@ Installation Instructions:
     7. The user can filter certain yelp categories in order to find specific waypoint destinations within 5 miles the pin dropped.
     8. Add desired activities to your itinerary and save your trip.
     9. By Selecting specific waypoints and choosing activities, you can customize your road trip
-    and see the and do the most while traveling efficiently! 
-
-Debugging: 
-
+    and see the and do the most while traveling efficiently!     
 
 Future Features:
 
-    Addition of email confirmation of itinerary
-    Incorporation of more Yelp categories to search by
-    Possibly the addition of real-time group planning of road-trip
+    Addition of email confirmation of itinerary.
+    Incorporation of more Yelp categories to search by.
+    Possibly the addition of real-time group planning of road-trip.
 
 
 
