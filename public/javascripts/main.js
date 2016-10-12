@@ -3,12 +3,18 @@ console.log('linked!');
 //AIzaSyCCSPeNs4RKje84chLxyLJKBdv_kf9gY7E
 
 var los_angeles = {lat: 34.06, lng: -118.24};
+//Way points array
 var waypts = [];
+//Initialize the marker coordiates
 var currentMark = {lat: 34.08, lng: -118.14};
+//Results back from yelp api
 var searchBusinessResult = [];
 var currentTrip = {};
+//Current stop(marker) on click for storing stopId
 var currentStopId = "";
+//Current Activity on click on rest/shopping modal, for saving activitees id
 var currentActivity = "";
+//Current business type on click in act_style modal, for activities save
 var currentBusType = "";
 
 function initMap() {
@@ -307,12 +313,18 @@ function reataurantToggle(){
   $('#restaurant_modal').modal('toggle')
   currentBusType = "restaurant";
 }
-//Function for toggleing restaurant modal
+//Function for toggleing shopping modal
 function shoppingToggle(){
   $('#shopping_modal').modal('toggle')
   currentBusType = "shopping";
   searchBusiness('shopping')
 }
+//Function for toggleing recreation modal
+function recreationToggle(){
+  $('#recreation_modal').modal('toggle')
+  currentBusType = "recreation";
+}
+
 //Function for toggleing confirm modal
 function confirmToggle(event){
   $('#confirm_modal').modal('toggle')
@@ -338,6 +350,6 @@ function doAddAct(){
     $('#confirm_modal').modal('hide');
     $('#restaurant_modal').modal('hide');
     $('#shopping_modal').modal('hide');
+    $('#recreation_modal').modal('hide');
   })
 }
-
