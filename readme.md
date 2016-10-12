@@ -1,10 +1,13 @@
-Readme.md ##
+## Readme.md 
 
 Project 3 - TRIPIFIC
 
+    Tripific is a road trip planning application, designed to help you get the most
+    out of your next road trip! By incorporating the the technologies available through Google Maps and Yelp, Tripific allows you to filter through specific Yelp categories to customize the waypoints you'd like to stop at throughout your trip. See more, do more, and drive less!
+
 links:
     Trello  https://trello.com/b/sUdF5Roq/project3-wdi
-    Heroku   
+    Heroku  fake heroku link.com 
 
 Project Team Members: 
 
@@ -41,6 +44,19 @@ Installation Instructions:
     8. Add desired activities to your itinerary and save your trip.
     9. By Selecting specific waypoints and choosing activities, you can customize your road trip
     and see the and do the most while traveling efficiently! 
+
+Debugging: 
+
+
+Future Features:
+
+    Addition of email confirmation of itinerary
+    Incorporation of more Yelp categories to search by
+    Possibly the addition of real-time group planning of road-trip
+
+
+
+
 
 
 
