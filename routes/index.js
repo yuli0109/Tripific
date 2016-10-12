@@ -15,21 +15,21 @@ router.get('/new', function(req, res, next) {
   res.render('app');
 });
 
-// // Create Stop route
-// router.post('/stops', createstop)
+// Create Stop route
+router.post('/stops', createstop)
 
-// // Delete Stop route
-// router.delete('/stops/:id', removestop)
+// Delete Stop route
+router.delete('/stops/:id', removestop)
 
-// // Trip Create Route
-// router.post('/trips', create)
+// Trip Create Route
+router.post('/trips', create)
 
-// // Trip Delete Route
-// router.delete('/trips/:id', del)
+// Trip Delete Route
+router.delete('/trips/:id', del)
 
-// // Itnerary route
-// // router.get('/', function (req,res){
-// //   res.
-// // })
+// Itnerary route
+// router.get('/', function (req,res){
+//   res.
+// })
 
 module.exports = router;
