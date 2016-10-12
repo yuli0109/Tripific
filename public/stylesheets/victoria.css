@@ -45,7 +45,6 @@ div#inputDiv {
   background-color:rgba(0, 0, 0, 0);
   height:50px;
   width: 300px;
-  color: #B1B1B1;
 }
 
 #dt-label {
@@ -65,3 +64,33 @@ div#inputDiv {
   width: 100px;
   margin-right: 150px;
 }
+
+/*Itinerary View*/
+
+#itinerary-body {
+  font-family: 'Lato', sans-serif;
+}
+
+header {
+  text-align: center;
+}
+
+#itinerary-logo {
+  text-align: left;
+  margin-left: 10px;
+  font-size: 42px;
+  letter-spacing: 2px;
+  font-family: 'Shrikhand', sans-serif;
+  text-shadow: 2px 2px #B2B5BE;
+}
+
+#itinerary-logo2 {
+  text-decoration: none;
+  color: #373742;
+}
+
+#itinerary-table {
+  width: 50%;
+  margin: 0 auto;
+}
+
