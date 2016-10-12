@@ -20,6 +20,7 @@ router.get('/trips/:id', tripsCtrl.show)
 // Create Stop route
 router.post('/trips/:tripId/stops', stopsCtrl.createStop)
 
+
 // Delete Stop route
 router.delete('/stops/:id', stopsCtrl.removeStop)
 

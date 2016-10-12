@@ -276,3 +276,4 @@ function renderRating (mediaNum, rating) {
 function reataurantToggle(){
   $('#restaurant_modal').modal('toggle')
 }
+
