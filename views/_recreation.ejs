@@ -1,0 +1,232 @@
+<div id="recreation_modal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <section id="recreation_page">
+        <div class="row" id="recreation_partial">
+          <div class="container col-md-3" id="recreation_filter">
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Class
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                  <div class="panel-body">
+                    <div class="list-group">
+                      <button type="button" class="list-group-item" onclick="searchBusiness('badminton')">Badminton</button>
+                      <button type="button" class="list-group-item" onclick="searchBusiness('football')">Football</button>
+                      <button type="button" class="list-group-item" onclick="searchBusiness('camping')">Camping</button>
+                      <button type="button" class="list-group-item" onclick="searchBusiness('golf')">Golf</button>
+                      <button type="button" class="list-group-item" onclick="searchBusiness('ski')">Skiing</button>
+                      <button type="button" class="list-group-item" onclick="searchBusiness('fishing')">Fishing</button>
+                      <button type="button" class="list-group-item" onclick="searchBusiness('nightbar')">Night Bar</button>
+                      <button type="button" class="list-group-item" onclick="searchBusiness('salon')">Hair Styling</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingTwo">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Price
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                  <div class="panel-body">
+                    <select id="price_selection" class="js-example-basic-multiple form-control" multiple="multiple">
+                      <option value='1'>$</option>
+                      <option value='2' selected="selected">$$</option>
+                      <option value='3'>$$$</option>
+                      <option value='4'>$$$$</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="container col-lg-8 pre-scrollable" id="restaurant_list">
+            <div class="list-group">
+              <div class="media list-group-item" id="media1">
+                <div class="media-left">
+                  <a>
+                    <img onclick="confirmToggle(this)" class="media-object img-flag" src="/images/loadings/progress-loading.gif">
+                  </a>
+                </div>
+                <div class="media-body">
+                  <h3 class="hidden"></h3>
+                  <h4 class="media-heading" id="select_heading">Media heading</h4>
+                  <table class="table table-striped">
+                    <tr>
+                      <td>Address:</td>
+                      <td class="select_address">Loading...</td>
+                    </tr>
+                    <tr>
+                      <td>Rating:</td>
+                      <td>
+                        <img src="/images/review_stars/iOS/10X10_0@3x.png" alt="" class="select_rating select_rating_1">
+                        <img src="/images/review_stars/iOS/10X10_0@3x.png" alt="" class="select_rating select_rating_2">
+                        <img src="/images/review_stars/iOS/10X10_0@3x.png" alt="" class="select_rating select_rating_3">
+                        <img src="/images/review_stars/iOS/10X10_0@3x.png" alt="" class="select_rating select_rating_4">
+                        <img src="/images/review_stars/iOS/10X10_0@3x.png" alt="" class="select_rating select_rating_5">
+                        <a href=""><span id="select_review"></span></a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Price:</td>
+                      <td class="select_price">Loading:</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div class="media list-group-item" id="media2">
+                <div class="media-left">
+                  <a>
+                    <img onclick="confirmToggle(this)" class="media-object img-flag" src="/images/loadings/progress-loading.gif">
+                  </a>
+                </div>
+                <div class="media-body">
+                  <h3 class="hidden"></h3>
+                  <h4 class="media-heading" id="select_heading">Media heading</h4>
+                  <table class="table table-striped">
+                    <tr>
+                      <td>Address:</td>
+                      <td class="select_address">Loading...</td>
+                    </tr>
+                    <tr>
+                      <td>Rating:</td>
+                      <td>
+                        <img src="/images/review_stars/iOS/10X10_0@3x.png" alt="" class="select_rating select_rating_1">
+                        <img src="/images/review_stars/iOS/10X10_0@3x.png" alt="" class="select_rating select_rating_2">
+                        <img src="/images/review_stars/iOS/10X10_0@3x.png" alt="" class="select_rating select_rating_3">
+                        <img src="/images/review_stars/iOS/10X10_0@3x.png" alt="" class="select_rating select_rating_4">
+                        <img src="/images/review_stars/iOS/10X10_0@3x.png" alt="" class="select_rating select_rating_5">
+                        <a href=""><span id="select_review"></span></a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Price:</td>
+                      <td class="select_price">Loading:</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div class="media list-group-item" id="media3">
+                <div class="media-left">
+                  <a>
+                    <img onclick="confirmToggle(this)" class="media-object img-flag" src="/images/loadings/progress-loading.gif">
+                  </a>
+                </div>
+                <div class="media-body">
+                  <h3 class="hidden"></h3>
+                  <h4 class="media-heading" id="select_heading">Media heading</h4>
+                  <table class="table table-striped">
+                    <tr>
+                      <td>Address:</td>
+                      <td class="select_address">Loading...</td>
+                    </tr>
+                    <tr>
+                      <td>Rating:</td>
+                      <td>
+                        <img src="/images/review_stars/iOS/10X10_0@3x.png" alt="" class="select_rating select_rating_1">
+                        <img src="/images/review_stars/iOS/10X10_0@3x.png" alt="" class="select_rating select_rating_2">
+                        <img src="/images/review_stars/iOS/10X10_0@3x.png" alt="" class="select_rating select_rating_3">
+                        <img src="/images/review_stars/iOS/10X10_0@3x.png" alt="" class="select_rating select_rating_4">
+                        <img src="/images/review_stars/iOS/10X10_0@3x.png" alt="" class="select_rating select_rating_5">
+                        <a href=""><span id="select_review"></span></a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Price:</td>
+                      <td class="select_price">Loading:</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div class="media list-group-item" id="media4">
+                <div class="media-left">
+                  <a>
+                    <img onclick="confirmToggle(this)" class="media-object img-flag" src="/images/loadings/progress-loading.gif">
+                  </a>
+                </div>
+                <div class="media-body">
+                  <h3 class="hidden"></h3>
+                  <h4 class="media-heading" id="select_heading">Media heading</h4>
+                  <table class="table table-striped">
+                    <tr>
+                      <td>Address:</td>
+                      <td class="select_address">Loading...</td>
+                    </tr>
+                    <tr>
+                      <td>Rating:</td>
+                      <td>
+                        <img src="/images/review_stars/iOS/10X10_0@3x.png" alt="" class="select_rating select_rating_1">
+                        <img src="/images/review_stars/iOS/10X10_0@3x.png" alt="" class="select_rating select_rating_2">
+                        <img src="/images/review_stars/iOS/10X10_0@3x.png" alt="" class="select_rating select_rating_3">
+                        <img src="/images/review_stars/iOS/10X10_0@3x.png" alt="" class="select_rating select_rating_4">
+                        <img src="/images/review_stars/iOS/10X10_0@3x.png" alt="" class="select_rating select_rating_5">
+                        <a href=""><span id="select_review"></span></a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Price:</td>
+                      <td class="select_price">Loading:</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div class="media list-group-item" id="media5">
+                <div class="media-left">
+                  <a>
+                    <img onclick="confirmToggle(this)" class="media-object img-flag" src="/images/loadings/progress-loading.gif">
+                  </a>
+                </div>
+                <div class="media-body">
+                  <h3 class="hidden"></h3>
+                  <h4 class="media-heading" id="select_heading">Media heading</h4>
+                  <table class="table table-striped">
+                    <tr>
+                      <td>Address:</td>
+                      <td class="select_address">Loading...</td>
+                    </tr>
+                    <tr>
+                      <td>Rating:</td>
+                      <td>
+                        <img src="/images/review_stars/iOS/10X10_0@3x.png" alt="" class="select_rating select_rating_1">
+                        <img src="/images/review_stars/iOS/10X10_0@3x.png" alt="" class="select_rating select_rating_2">
+                        <img src="/images/review_stars/iOS/10X10_0@3x.png" alt="" class="select_rating select_rating_3">
+                        <img src="/images/review_stars/iOS/10X10_0@3x.png" alt="" class="select_rating select_rating_4">
+                        <img src="/images/review_stars/iOS/10X10_0@3x.png" alt="" class="select_rating select_rating_5">
+                        <a href=""><span id="select_review"></span></a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Price:</td>
+                      <td ="select_price">Loading:</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+              <nav aria-label="Page navigation" id="recreation_page_nav" class="center-block">
+                <ul class="pagination">
+                  <li id="previousBtn" class="disabled"><a aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+                  <li class="active"><a class="page-numbers" onclick="renderBusiness(1)">1<span class="sr-only">(current)</span></a></li>
+                  <li class=""><a class="page-numbers" onclick="renderBusiness(2)">2<span class="sr-only">(current)</span></a></li>
+                  <li class=""><a class="page-numbers" onclick="renderBusiness(3)">3<span class="sr-only">(current)</span></a></li>
+                  <li class=""><a class="page-numbers" onclick="renderBusiness(4)">4<span class="sr-only">(current)</span></a></li>
+                  <li class=""><a class="page-numbers" onclick="renderBusiness(5)">5<span class="sr-only">(current)</span></a></li>
+                  <li id="nextBtn" class=""><a aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+                </ul>
+              </nav>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
