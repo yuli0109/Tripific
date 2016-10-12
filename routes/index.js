@@ -18,10 +18,10 @@ router.get('/', function(req, res, next) {
 router.get('/trips/:id', tripsCtrl.show)
 
 // Post activity route
-router.post('/stops/:stopId/activities', )
+router.post('/stops/:stopId/activities', stopsCtrl.addActivity)
 
 // Delete Activity route
-router.delete('/activities/:activityId',)
+router.delete('/activities/:activityId', stopsCtrl.removeActivity)
 
 // Create Stop route
 router.post('/trips/:tripId/stops', stopsCtrl.createStop)
