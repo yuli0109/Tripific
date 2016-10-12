@@ -28,6 +28,22 @@ function initMap() {
   };
 
   document.getElementById('goBtn').addEventListener('click', onClickHandler);
+  //Saving the trip on user
+  $("#goBtn").on('click', function(event) {
+    $.ajax({
+    url: '/api/trips',
+    dataType: 'json',
+    method: "POST",
+    data: {
+      tripDate: Date.parse("March 21, 2012"),
+      origin: $("#origin").val(),
+      destination: $("#dest").val()
+      }
+    })
+    .done(function(data) {
+      console.log(data);
+    })
+  });
 
   //Define the drawing manager
   var drawingManager = new google.maps.drawing.DrawingManager({
