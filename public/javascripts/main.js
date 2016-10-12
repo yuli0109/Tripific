@@ -6,6 +6,7 @@ var los_angeles = {lat: 34.06, lng: -118.24};
 var waypts = [];
 var currentMark = {lat: 34.08, lng: -118.14};
 var searchBusinessResult = [];
+var currentTrip = {};
 
 function initMap() {
   var autocomplete_orgin = new google.maps.places.Autocomplete(document.getElementById('origin'));
@@ -35,13 +36,14 @@ function initMap() {
     dataType: 'json',
     method: "POST",
     data: {
-      tripDate: Date.parse("March 21, 2012"),
+      tripDate: Date.parse("March 21, 2017"),
       origin: $("#origin").val(),
       destination: $("#dest").val()
       }
     })
     .done(function(data) {
-      console.log(data);
+      currentTrip = data;
+      console.log("The marker are now all on trip_id:" + currentTrip);
     })
   });
 
@@ -63,6 +65,22 @@ function initMap() {
   google.maps.event.addListener(drawingManager, 'markercomplete', function(marker) {
     //Assign id to the marker
     marker.uid = markerId;
+    //Sending post request to save stops on the current trip
+    $.ajax({
+        url: `/trips/${currentTrip._id}/stops`,
+        dataType: 'json',
+        method: "POST",
+        data: {
+          name: "stop1",
+          location: {
+            lat: marker.getPosition().lat(),
+            lng: marker.getPosition().lng()
+          }
+        }
+      })
+      .done(function(data) {
+        console.log("Response from stop create:"+ data);
+      })
     //Add listener to left click on marker
     google.maps.event.addListener(marker, 'rightclick', function(mouseEvent) {
       //Remove marker object in marker array

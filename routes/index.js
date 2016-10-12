@@ -18,7 +18,7 @@ router.get('/', function(req, res, next) {
 router.get('/trips/:id', tripsCtrl.show)
 
 // Create Stop route
-router.post('/stops' , stopsCtrl.createStop)
+router.post('/trips/:tripId/stops', stopsCtrl.createStop)
 
 // Delete Stop route
 router.delete('/stops/:id', stopsCtrl.removeStop)
