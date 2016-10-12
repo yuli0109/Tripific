@@ -296,4 +296,8 @@ function renderRating (mediaNum, rating) {
 function reataurantToggle(){
   $('#restaurant_modal').modal('toggle')
 }
+//Function for toggleing confirm modal
+function confirmToggle(){
+  $('#confirm_modal').modal('toggle')
+}
 
