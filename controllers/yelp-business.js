@@ -19,7 +19,7 @@ function businessSearch (req, res, next) {
   var yelp = new Yelp({
     access_token: process.env.YELP_TOKEN
   });
-  yelp.search({term: req.query.term, latitude: req.query.location.lat, longitude: req.query.location.lng, limit: 25, sort_by: 'rating'}, function(error, data) {
+  yelp.search({price: req.query.price, term: req.query.term, latitude: req.query.location.lat, longitude: req.query.location.lng, limit: 25}, function(error, data) {
     console.log(data.businesses);
     var searchResults = data.businesses.map(function(el){
         return {text:el.name, id: el.id, img_url: el.image_url, price: el.price, rating: el.rating, address: `${el.location.address1}, ${el.location.city}, ${el.location.state} ${el.location.zip_code}`}
