@@ -146,18 +146,30 @@ ul {
   margin-top: 70px;
  }
 }
-@media only screen and (max-width:900px) {
+/*@media only screen and (max-width:1000px) {
+#header {
+  margin-left: 70%;
+  vertical-align: middle;
+ }
+#map_container {
+  width: 70%;
+  height: 55%;
+  margin-top: 70px;
+ }
+}*/
+@media only screen and (max-width:1000px) {
 .table {
   text-align: left;
 }
 #map {
   height: 80%;
-  width: 60%;
+  width: 146%;
 
  }
 #route_info .well {
   margin-top: -115px;
   margin-left: 100px;
+  width: 257%;
  }
 #map_container {
   width: 70%;
