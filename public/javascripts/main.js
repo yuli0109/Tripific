@@ -317,6 +317,7 @@ function reataurantToggle(){
 function shoppingToggle(){
   $('#shopping_modal').modal('toggle')
   currentBusType = "shopping";
+  debugger;
   searchBusiness('shopping')
 }
 //Function for toggleing recreation modal
