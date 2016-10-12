@@ -6,7 +6,7 @@ var los_angeles = {lat: 34.06, lng: -118.24};
 var waypts = [];
 var currentMark = {lat: 34.08, lng: -118.14};
 var searchBusinessResult = [];
-var curntTrip = {};
+var currentTrip = {};
 var currentStopId = "";
 var currentActivity = "";
 
@@ -44,8 +44,7 @@ function initMap() {
       }
     })
     .done(function(data) {
-      curntTrip = data;
-      console.log("The marker are now all on trip_id:" + currentTrip);
+      currentTrip = data;
     })
   });
 
@@ -81,7 +80,7 @@ function initMap() {
         }
       })
       .done(function(data) {
-        curntTrip = data;
+        currentTrip = data;;
         markers.forEach(function(marker, i){
           marker.stopId = data.stops[i]._id;
         })
@@ -100,7 +99,7 @@ function initMap() {
         method: "DELETE"
       })
       .done(function(data) {
-        curntTrip = data;
+        currentTrip = data;
       })
       //Remove marker object in marker array
       markers = markers.filter(function(elm){
@@ -326,7 +325,7 @@ function doAddAct(){
     }
   })
   .done(function(data) {
-    curntTrip = data;
+    currentTrip = data;
     $('#confirm_modal').modal('hide');
     $('#restaurant_modal').modal('hide');
   })
