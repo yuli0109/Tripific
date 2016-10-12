@@ -3,7 +3,7 @@
 # Tripific
 
     Tripific is a road trip planning application, designed to help you 
-    get the mostout of your next road trip! By incorporating the the 
+    get the most out of your next road trip! By incorporating the the 
     technologies available through Google Maps and Yelp, Tripific 
     allows you to filter through specific Yelp categories to customize
     the waypoints you'd like to stop at throughout your trip. 
@@ -11,9 +11,9 @@
 
 Links:
 
-    Trello - https://trello.com/b/sUdF5Roq/project3-wdi
-    Heroku - fake heroku link.com 
-    Presentation - https://docs.google.com/presentation/d/18YgAXaNqtX2f3b1WrL2OQwlgdgIPqU77tQl8ne4ojLY/edit#slide=id.p
+Trello - https://trello.com/b/sUdF5Roq/project3-wdi
+Heroku - fake heroku link.com 
+Presentation - https://docs.google.com/presentation/d/18YgAXaNqtX2f3b1WrL2OQwlgdgIPqU77tQl8ne4ojLY/edit#slide=id.p
 
 Project 3 Team Members: 
 
