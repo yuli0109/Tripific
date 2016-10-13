@@ -1,7 +1,7 @@
 /*'Start' View*/
 
 #start {
-  height: 500px;
+  height: 650px;
   background-image: url("/images/start_night2.jpg");
   background-attachment: fixed;
   background-position: center;
@@ -64,6 +64,20 @@ div#inputDiv {
   text-align: center;
   width: 100px;
   margin-right: 150px;
+}
+
+/*Trips View*/
+
+#trips {
+  background-color: #181818;
+  color: #F7F7EF;
+  height: 400px;
+}
+
+#trips-table {
+  width: 50%;
+  margin: 0 auto;
+  color: #F7F7EF;
 }
 
 /*Itinerary View*/
