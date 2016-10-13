@@ -17,6 +17,8 @@ var currentActivity = "";
 //Current business type on click in act_style modal, for activities save
 var currentBusType = "";
 
+
+
 function initMap() {
   var autocomplete_orgin = new google.maps.places.Autocomplete(document.getElementById('origin'));
   var autocomplete_dest = new google.maps.places.Autocomplete(document.getElementById('dest'));
@@ -26,7 +28,7 @@ function initMap() {
   var markers = [];
   //Array Id counter
   var markerId = 0;
-  map = new google.maps.Map(document.getElementById('map'), {
+   map = new google.maps.Map(document.getElementById('map'), {
     zoom: 9,
     center: los_angeles,
     styles: [
