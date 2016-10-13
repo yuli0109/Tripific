@@ -488,13 +488,14 @@ function renderOneTrip (tripId) {
 }
 
 function renderStops(){
-  currentTrip.stops.forEach(function(stop){
+  currentTrip.stops.forEach(function(stop,idx){
     var marker = new google.maps.Marker({
       position: stop.location,
       map: map,
       title: stop._id
     });
     myMarkerFunction(marker)
+    markers[idx].stopId = stop._id;
   });
 }
 
