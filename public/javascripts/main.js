@@ -17,7 +17,7 @@ var currentActivity = "";
 //Current business type on click in act_style modal, for activities save
 var currentBusType = "";
 //All trips of the user
-var allTrip = [];
+var allTrips = [];
 
 
 
@@ -442,12 +442,18 @@ function cancelConfirm(){
   $('#confirm_modal').modal('hide');
 }
 
-function getAllTrip(){
+function getAllTrips(){
   $.ajax({
     url: '/trips',
     dataType: 'json'
   })
   .done(function(data) {
-    allTrip = data;
+    allTrips = data;
   })
+}
+
+function renderOneTrip (tripId) {
+  tripToRender = allTrips.filter(function(elm) {
+    return elm._id == tripId
+  });
 }
