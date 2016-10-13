@@ -1,3 +1,8 @@
+#yelp_image{
+width: 200px;
+position:fixed;
+}
+
 button#modal-btns.btn.btn-success{
   margin-right : 115px;
 }
