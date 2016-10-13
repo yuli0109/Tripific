@@ -3,8 +3,11 @@
 }
 
 #yelp_image{
-width: 200px;
-position:fixed;
+width: 100px;
+}
+footer {
+  margin-bottom: 0px;
+  padding-top: 340px;
 }
 
 button#modal-btns.btn.btn-success{
