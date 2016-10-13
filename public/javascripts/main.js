@@ -434,3 +434,25 @@ function doAddAct(){
     $('#recreation_modal').modal('hide');
   })
 }
+
+function getAllTrip(){
+    $.ajax({
+    url: `/`,
+    dataType: 'json',
+    method: "GET",
+    data: {
+      businessType: currentBusType,
+      businessName: "business_name",
+      businessId: currentActivity,
+      lat: currentMark.lat,
+      lng: currentMark.lng
+    }
+  })
+  .done(function(data) {
+    currentTrip = data;
+    $('#confirm_modal').modal('hide');
+    $('#restaurant_modal').modal('hide');
+    $('#shopping_modal').modal('hide');
+    $('#recreation_modal').modal('hide');
+  })
+}
