@@ -497,3 +497,37 @@ function renderStops(){
     myMarkerFunction(marker)
   });
 }
+
+function renderAllTrips(){
+  $.ajax({
+    url: '/trips',
+    dataType: 'json'
+  })
+  .done(function(data) {
+    allTrips = data;
+    var html = '';
+    var tBody = $("#trips-body");
+    tBody.html('');
+    allTrips.forEach(function(trip){
+      html = `
+        <tr>
+          <td>${trip.origin} to ${trip.destination}</td>
+          <td>${moment(trip.tripDate).format("MM-DD-YYYY")}</td>
+          <td><a href="#" onclick="deleteTrip('${trip._id}')"><img src="/images/icons/x-mark-3-32.png" alt=""></a></td>
+        </tr>
+      `;
+      tBody.append(html);
+    });
+  });
+}
+
+function deleteTrip(tripId) {
+  $.ajax({
+    url: '/trips/' + tripId,
+    method: 'DELETE',
+    dataType: 'json'
+  })
+  .done(function(data) {
+    renderAllTrips();
+  });
+}
