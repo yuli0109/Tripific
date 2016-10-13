@@ -1,10 +1,12 @@
 <div id="confirm_modal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <center><h3>Are you sure you want to add this item to your itinerary?</h3></center>
-          <hr>
-      <center>  <button onclick="doAddAct()" class="btn btn-success" style= margin-right:250px>Submit</button>
-          <button class="btn btn-danger" onclick="cancelConfirm()">Cancel</button></center>
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content" id = "modal_confirm" >
+      <h3>Are you sure you want to add this item to your itinerary?</h3>
+      <hr>
+      <div id = "button-align">
+        <button onclick="doAddAct()" class="btn btn-success" id="modal-btns" >Submit</button>
+        <button class="btn btn-danger" id="modal-btns">Cancel</button>
+      </div>
     </div>
   </div>
 </div>
