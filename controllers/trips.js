@@ -35,10 +35,7 @@ function create(req, res) {
 }
 
 function del(req, res) {
-  Trip.findByIdAndRemove(req.params.tripId, function(err, trip){
-    trip.pop();
-    trip.save(function(err){
-      res.json(trip);
-    })
-  })
+  Trip.findByIdAndRemove(req.params.id, function(err, trip){
+    res.redirect('/trips');
+  });
 }
