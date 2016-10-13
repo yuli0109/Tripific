@@ -19,7 +19,7 @@ router.get('/', function(req, res, next) {
 router.get('/trips', tripsCtrl.index)
 
 // get itinerary for a trip
-router.get('/trips/:id', tripsCtrl.index)
+router.get('/trips/:tripId', tripsCtrl.show)
 
 // Post activity route
 router.post('/stops/:stopId/activities', stopsCtrl.addActivity)
@@ -44,35 +44,35 @@ router.delete('/trips/:id',  tripsCtrl.delete)
 //   res.
 // })
 
-router.get('/itinerary', function(req,res){
-  var trip = {
-    origin: 'Los Angeles',
-    destination: 'Las Vegas',
-    tripDate: '10/13/2016',
-    stops: [{
-      name: 'fake stop',
-      activities: [{
-        type: 'dining',
-        name: 'fake activity'
-      },
-      {
-        type: 'dining',
-        name: 'fake activity'
-      }]
-    },
-    {
-      name: 'fake stop',
-      activities: [{
-        type: 'dining',
-        name: 'fake activity'
-      },
-      {
-        type: 'dining',
-        name: 'fake activity'
-      }]
-    }]
-  };
-  res.render('itinerary', {trip: trip})
-})
+// router.get('/itinerary', function(req,res){
+//   var trip = {
+//     origin: 'Los Angeles',
+//     destination: 'Las Vegas',
+//     tripDate: '10/13/2016',
+//     stops: [{
+//       name: 'fake stop',
+//       activities: [{
+//         type: 'dining',
+//         name: 'fake activity'
+//       },
+//       {
+//         type: 'dining',
+//         name: 'fake activity'
+//       }]
+//     },
+//     {
+//       name: 'fake stop',
+//       activities: [{
+//         type: 'dining',
+//         name: 'fake activity'
+//       },
+//       {
+//         type: 'dining',
+//         name: 'fake activity'
+//       }]
+//     }]
+//   };
+//   res.render('itinerary', {trip: trip})
+// })
 
 module.exports = router;
