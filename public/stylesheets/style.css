@@ -12,18 +12,13 @@
   background-size: cover;
 }
 
-#map div .gm-style {
-    border-radius: 30px;
-}
-
-
 #map {
   width: 95%;
   height: 90%;
   margin: 0 auto;
   margin-top: 20px;
   border-radius: 30px;
-  border:3px solid #fefefe;
+  border:5px solid #fefefe;
 }
 
 #map_container {
@@ -77,7 +72,6 @@ ul {
   color: #F7F7EF;
   background-color: none;
   align-self: right;
-  padding: -25px;
 }
 
 #trips-btn {
