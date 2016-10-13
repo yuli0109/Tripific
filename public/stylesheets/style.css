@@ -42,7 +42,7 @@ button#modal-btns.btn.btn-success{
   /*border: 1px solid black;*/
   height: 100%;
   width:  100%;
-  background-image: url("http://cdn.wonderfulengineering.com/wp-content/uploads/2016/01/California-Wallpaper-34.jpg");
+  background-image: url("/images/route_photo.jpg");
   background-size: cover;
 }
 
