@@ -174,7 +174,6 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
     });
 }
 
-
 //Import the select2 Library for select bar
 $(".js-example-basic-multiple").select2();
 
