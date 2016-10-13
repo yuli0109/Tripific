@@ -13,6 +13,8 @@ Additional Links:
 
 Trello - https://trello.com/b/sUdF5Roq/project3-wdi
 
+Heroku - https://tripific.herokuapp.com/
+
 Presentation - https://docs.google.com/presentation/d/18YgAXaNqtX2f3b1WrL2OQwlgdgIPqU77tQl8ne4ojLY/edit#slide=id.p
 
 Project 3 Team Members: 
