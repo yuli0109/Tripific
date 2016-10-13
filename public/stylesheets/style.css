@@ -123,6 +123,8 @@ ul {
   color: #F7F7EF;
   background-color: none;
   align-self: right;
+  padding: -25px;
+  margin-left: -70px;
 }
 
 #trips-btn {
@@ -176,6 +178,7 @@ ul {
     border: 3px solid #e4e4e4;
     height: 450px;
     border-radius: 30px;
+    margin-left: -30px;
 }
 
 #trips-btn2 {
@@ -213,8 +216,7 @@ ul {
 }
 
 /*Media Queries*/
-
-@media only screen and (max-width:1350px) {
+/*@media only screen and (max-width:1450px) {
 #header {
   margin-left: 70%;
   vertical-align: middle;
@@ -224,18 +226,38 @@ ul {
   height: 60%;
   margin-top: 70px;
  }
+ #route_info .well {
+    /* margin-top: -180px; */
+ /*   margin-left: 100px;
+    width: 257%;
+    height: 89%;
 }
-/*@media only screen and (max-width:1000px) {
+}*/
+@media only screen and (max-width:1350px) {
 #header {
   margin-left: 70%;
   vertical-align: middle;
  }
+#info_container {
+    margin-top: -58px;
+    width: 30%;
+    height: 84%;
+    margin-bottom: 11px;
+  /*  margin-left: 10px;*/
+}
+/*#route_info .well {
+    /* margin-top: -180px; */
+/*    margin-left: 100px;
+    width: 257%;
+    height: 89%;
+}*/
 #map_container {
   width: 70%;
-  height: 55%;
+  height: 60%;
   margin-top: 70px;
  }
-}*/
+}
+
 @media only screen and (max-width:1000px) {
 .table {
   text-align: left;
