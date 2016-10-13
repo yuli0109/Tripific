@@ -17,6 +17,8 @@ var currentActivity = "";
 //Current business type on click in act_style modal, for activities save
 var currentBusType = "";
 
+
+
 function initMap() {
   var autocomplete_orgin = new google.maps.places.Autocomplete(document.getElementById('origin'));
   var autocomplete_dest = new google.maps.places.Autocomplete(document.getElementById('dest'));
@@ -26,7 +28,7 @@ function initMap() {
   var markers = [];
   //Array Id counter
   var markerId = 0;
-  map = new google.maps.Map(document.getElementById('map'), {
+   map = new google.maps.Map(document.getElementById('map'), {
     zoom: 9,
     center: los_angeles,
     styles: [
@@ -254,7 +256,6 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
     });
 }
 
-
 //Import the select2 Library for select bar
 $(".js-example-basic-multiple").select2();
 
@@ -418,6 +419,28 @@ function doAddAct(){
     url: `/stops/${markToAddAct[0].stopId}/activities`,
     dataType: 'json',
     method: "POST",
+    data: {
+      businessType: currentBusType,
+      businessName: "business_name",
+      businessId: currentActivity,
+      lat: currentMark.lat,
+      lng: currentMark.lng
+    }
+  })
+  .done(function(data) {
+    currentTrip = data;
+    $('#confirm_modal').modal('hide');
+    $('#restaurant_modal').modal('hide');
+    $('#shopping_modal').modal('hide');
+    $('#recreation_modal').modal('hide');
+  })
+}
+
+function getAllTrip(){
+    $.ajax({
+    url: `/`,
+    dataType: 'json',
+    method: "GET",
     data: {
       businessType: currentBusType,
       businessName: "business_name",
