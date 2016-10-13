@@ -18,6 +18,9 @@ router.get('/', function(req, res, next) {
 // get trips for a user
 router.get('/trips', tripsCtrl.index)
 
+// get itinerary for a trip
+router.get('/trips/:tripId', tripsCtrl.show)
+
 // Post activity route
 router.post('/stops/:stopId/activities', stopsCtrl.addActivity)
 

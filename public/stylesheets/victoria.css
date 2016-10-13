@@ -71,13 +71,19 @@ div#inputDiv {
 #trips {
   background-color: #181818;
   color: #F7F7EF;
-  height: 400px;
+  height: 500px;
 }
 
 #trips-table {
-  width: 50%;
+  width: 70%;
   margin: 0 auto;
+  margin-top: 50px;
   color: #F7F7EF;
+}
+
+#trips-header {
+  font-family: 'Lato', sans-serif;
+  font-size: 36px;
 }
 
 /*Itinerary View*/
@@ -107,5 +113,12 @@ header {
 #itinerary-table {
   width: 50%;
   margin: 0 auto;
+}
+
+#i-btn {
+  border-color: #F7F7EF;
+  color: #F7F7EF;
+  background-color: none;
+  align-self: right;
 }
 

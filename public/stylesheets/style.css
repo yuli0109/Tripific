@@ -1,3 +1,8 @@
+#yelp_image{
+width: 200px;
+position:fixed;
+}
+
 button#modal-btns.btn.btn-success{
   margin-right : 115px;
 }
@@ -41,18 +46,13 @@ button#modal-btns.btn.btn-success{
   background-size: cover;
 }
 
-#map div .gm-style {
-    border-radius: 30px;
-}
-
-
 #map {
   width: 95%;
   height: 450px;
   margin: 0 auto;
   margin-top: 5px;
   border-radius: 30px;
-  border:3px solid #fefefe;
+  border:5px solid #fefefe;
 }
 
 #map_container {
@@ -123,7 +123,6 @@ ul {
   color: #F7F7EF;
   background-color: none;
   align-self: right;
-  padding: -25px;
 }
 
 #trips-btn {
