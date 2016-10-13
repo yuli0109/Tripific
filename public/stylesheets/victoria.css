@@ -29,22 +29,23 @@ div#inputDiv {
 }
 
 #origin {
-  background-color:rgba(0, 0, 0, 0);
+  background-color:rgba(0, 0, 0, .9);
   height:50px;
   width: 300px;
 }
 
 #dest {
-  background-color:rgba(0, 0, 0, 0);
+  background-color:rgba(0, 0, 0, .9);
   height:50px;
   width: 300px;
 }
 
 #dt-picker {
   margin-top: 25px;
-  background-color:rgba(0, 0, 0, 0);
+  background-color:rgba(0, 0, 0, .9);
   height:50px;
   width: 300px;
+  color: #B1B1B1;
 }
 
 #dt-label {

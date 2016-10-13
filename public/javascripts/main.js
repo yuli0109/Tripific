@@ -16,6 +16,8 @@ var currentStopId = "";
 var currentActivity = "";
 //Current business type on click in act_style modal, for activities save
 var currentBusType = "";
+//All trips of the user
+var allTrip = [];
 
 
 
@@ -256,7 +258,6 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
     });
 }
 
-
 //Import the select2 Library for select bar
 $(".js-example-basic-multiple").select2();
 
@@ -399,6 +400,7 @@ function reataurantToggle(){
 function shoppingToggle(){
   $('#shopping_modal').modal('toggle')
   currentBusType = "shopping";
+  debugger;
   searchBusiness('shopping')
 }
 //Function for toggleing recreation modal
@@ -433,5 +435,19 @@ function doAddAct(){
     $('#restaurant_modal').modal('hide');
     $('#shopping_modal').modal('hide');
     $('#recreation_modal').modal('hide');
+  })
+}
+
+function cancelConfirm(){
+  $('#confirm_modal').modal('hide');
+}
+
+function getAllTrip(){
+  $.ajax({
+    url: '/trips',
+    dataType: 'json'
+  })
+  .done(function(data) {
+    allTrip = data;
   })
 }
