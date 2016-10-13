@@ -1,3 +1,28 @@
+button#modal-btns.btn.btn-success{
+  margin-right : 115px;
+}
+
+#modal-btns {
+  width: 106px;
+  height: 44px;
+  font-size: 18px;
+}
+
+#button-align{
+  align-content: center;
+  align-items: center;
+  text-align: center;
+
+}
+
+.modal-btns {
+  margin: 50px;
+}
+
+div.modal-content {
+  width: 625px;
+}
+
 #autocomplete {
   width: 100%;
   height: 25px;
