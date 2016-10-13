@@ -215,9 +215,10 @@ ul {
 
  }
 #route_info .well {
-  margin-top: -115px;
+  margin-top: -180px;
   margin-left: 100px;
   width: 257%;
+  height: 75%;
  }
 #map_container {
   width: 70%;
