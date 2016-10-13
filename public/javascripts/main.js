@@ -22,18 +22,20 @@ var allTrips = [];
 var origin = "";
 //Current destination
 var destination = "";
-
-
+//Represents all markers
+var markers = [];
+//Represents single markerId
+var markerId = 0;
 
 function initMap() {
   var autocomplete_orgin = new google.maps.places.Autocomplete(document.getElementById('origin'));
   var autocomplete_dest = new google.maps.places.Autocomplete(document.getElementById('dest'));
-  var directionsService = new google.maps.DirectionsService;
-  var directionsDisplay = new google.maps.DirectionsRenderer;
+   directionsService = new google.maps.DirectionsService;
+   directionsDisplay = new google.maps.DirectionsRenderer;
   //Array of marker object
-  var markers = [];
+  markers = [];
   //Array Id counter
-  var markerId = 0;
+  markerId = 0;
    map = new google.maps.Map(document.getElementById('map'), {
     zoom: 9,
     center: los_angeles,
@@ -162,9 +164,8 @@ function initMap() {
   drawingManager.setMap(map);
   //Add listener to markers after drawn
   google.maps.event.addListener(drawingManager, 'markercomplete', function(marker) {
-    //Assign id to the marker
-    marker.uid = markerId;
     //Sending post request to save stops on the current trip
+    marker.uid = markerId;
     $.ajax({
         url: `/trips/${currentTrip._id}/stops`,
         dataType: 'json',
@@ -179,12 +180,40 @@ function initMap() {
       })
       .done(function(data) {
         currentTrip = data;;
+        myMarkerFunction(marker)
         markers.forEach(function(marker, i){
           marker.stopId = data.stops[i]._id;
         })
         currentStopId = data._id;
         console.log(markers);
       })
+  });
+}
+
+function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+  directionsService.route({
+    origin: origin,
+    destination: destination,
+    travelMode: 'DRIVING',
+    waypoints: waypts
+  }, function(response, status) {
+      console.log(response);
+      $("#start_loc").text(response.routes[0].legs[0].start_address);
+      $("#end_loc").text(response.routes[0].legs[0].end_address);
+      $("#cell_duration").text(response.routes[0].legs[0].duration.text);
+      $("#cell_milage").text(response.routes[0].legs[0].distance.text);
+      if (status === 'OK') {
+      directionsDisplay.setDirections(response);
+      } else {
+      window.alert('Directions request failed due to ' + status);
+      }
+    });
+}
+
+function myMarkerFunction(marker){
+  //Assign id to the marker
+    marker.uid = markerId;
+
     //Add listener to right click on marker
     google.maps.event.addListener(marker, 'rightclick', function(mouseEvent) {
       markToDelete = markers.filter(function(elm) {
@@ -242,27 +271,6 @@ function initMap() {
     });
     // console.log(`Waypath after add: ${waypts}`);
     calculateAndDisplayRoute(directionsService, directionsDisplay)
-  });
-}
-
-function calculateAndDisplayRoute(directionsService, directionsDisplay) {
-  directionsService.route({
-    origin: origin,
-    destination: destination,
-    travelMode: 'DRIVING',
-    waypoints: waypts
-  }, function(response, status) {
-      console.log(response);
-      $("#start_loc").text(response.routes[0].legs[0].start_address);
-      $("#end_loc").text(response.routes[0].legs[0].end_address);
-      $("#cell_duration").text(response.routes[0].legs[0].duration.text);
-      $("#cell_milage").text(response.routes[0].legs[0].distance.text);
-      if (status === 'OK') {
-      directionsDisplay.setDirections(response);
-      } else {
-      window.alert('Directions request failed due to ' + status);
-      }
-    });
 }
 
 //Import the select2 Library for select bar
@@ -462,5 +470,30 @@ function getAllTrips(){
 function renderOneTrip (tripId) {
   tripToRender = allTrips.filter(function(elm) {
     return elm._id == tripId
+  })[0];
+  currentTrip = tripToRender;
+  origin = tripToRender.origin;
+  destination = tripToRender.destination;
+  waypts = tripToRender.stops.map(function(elem, index) {
+    return {
+            location: {
+              lat: elem.location.lat,
+              lng: elem.location.lng
+            },
+            stopover: false
+          }
+  });
+  calculateAndDisplayRoute(directionsService, directionsDisplay);
+  renderStops();
+}
+
+function renderStops(){
+  currentTrip.stops.forEach(function(stop){
+    var marker = new google.maps.Marker({
+      position: stop.location,
+      map: map,
+      title: stop._id
+    });
+    myMarkerFunction(marker)
   });
 }
