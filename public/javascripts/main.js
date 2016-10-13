@@ -370,39 +370,39 @@ function renderBusiness (pageNumb) {
 function renderRating (mediaNum, rating) {
   switch (rating) {
     case 1:
-        $(`#media${mediaNum} > *img.select_rating_1`).attr("src", '/images/review_stars/ios/10X10_1@3x.png');
+        $(`#media${mediaNum} > *img.select_rating_1`).attr("src", '/images/star_1.png');
         break;
     case 1.5:
-        $(`#media${mediaNum} > *img.select_rating_1`).attr("src", '/images/review_stars/ios/10X10_1@3x.png');
-        $(`media${mediaNum} > *img.select_rating_2`).attr("src", '/images/review_stars/ios/10X10_1-5@3x.png');
+        $(`#media${mediaNum} > *img.select_rating_1`).attr("src", '/images/star_1.png');
+        $(`media${mediaNum} > *img.select_rating_2`).attr("src", '/images/star_1-5.png');
         $(`media${mediaNum} > *img.select_rating_3, media${mediaNum} > * img.select_rating_4， media${mediaNum} > * img.select_rating_5`).attr("src", '/images/review_stars/ios/10X10_0@3x.png');
         break;
     case 2:
-        $(`media${mediaNum} > *img.select_rating_1, media${mediaNum} > * img.select_rating_2`).attr("src", '/images/review_stars/ios/10X10_2@3x.png');
+        $(`media${mediaNum} > *img.select_rating_1, media${mediaNum} > * img.select_rating_2`).attr("src", '/images/star_2.png');
         break;
     case 2.5:
-        $(`media${mediaNum} > *img.select_rating_1, media${mediaNum} > * img.select_rating_2`).attr("src", '/images/review_stars/ios/10X10_2@3x.png');
-        $(`media${mediaNum} > *img.select_rating_3`).attr("src", '/images/review_stars/ios/10X10_2-5@3x.png');
+        $(`media${mediaNum} > *img.select_rating_1, media${mediaNum} > * img.select_rating_2`).attr("src", '/images/star_2.png');
+        $(`media${mediaNum} > *img.select_rating_3`).attr("src", '/images/star_2-5.png');
         $(`media${mediaNum} > * img.select_rating_4， media${mediaNum} > * img.select_rating_5`).attr("src", '/images/review_stars/ios/10X10_0@3x.png');
         break;
     case 3:
-        $(`media${mediaNum} > *img.select_rating_1, media${mediaNum} > * img.select_rating_2, media${mediaNum} > * img.select_rating_3`).attr("src", '/images/review_stars/ios/10X10_3@3x.png');
+        $(`media${mediaNum} > *img.select_rating_1, media${mediaNum} > * img.select_rating_2, media${mediaNum} > * img.select_rating_3`).attr("src", '/images/star_3.png');
         break;
     case 3.5:
-        $(`media${mediaNum} > *img.select_rating_1, media${mediaNum} > * img.select_rating_2, media${mediaNum} > * img.select_rating_3`).attr("src", '/images/review_stars/ios/10X10_3@3x.png');
-        $(`media${mediaNum} > *img.select_rating_4`).attr("src", '/images/review_stars/ios/10X10_3-5@3x.png');
+        $(`media${mediaNum} > *img.select_rating_1, media${mediaNum} > * img.select_rating_2, media${mediaNum} > * img.select_rating_3`).attr("src", '/images/star_3.png');
+        $(`media${mediaNum} > *img.select_rating_4`).attr("src", '/images/star_3-5.png');
         $(`media${mediaNum} > *img.select_rating_5`).attr("src", '/images/review_stars/ios/10X10_0@3x.png');
         break;
     case 4:
-        $(`#media${mediaNum} > * img.select_rating_1, #media${mediaNum} > * img.select_rating_2, #media${mediaNum} > * img.select_rating_3, #media${mediaNum} > * img.select_rating_4`).attr("src", '/images/review_stars/ios/10X10_4@3x.png');
+        $(`#media${mediaNum} > * img.select_rating_1, #media${mediaNum} > * img.select_rating_2, #media${mediaNum} > * img.select_rating_3, #media${mediaNum} > * img.select_rating_4`).attr("src", '/images/star_4.png');
         $(`#media${mediaNum} > * img.select_rating_5`).attr("src", '/images/review_stars/ios/10X10_0@3x.png');
         break;
     case 4.5:
-        $(`#media${mediaNum} > * img.select_rating_1, #media${mediaNum} > * img.select_rating_2, #media${mediaNum} > * img.select_rating_3, #media${mediaNum} > * img.select_rating_4`).attr("src", '/images/review_stars/ios/10X10_4@3x.png');
-        $(`#media${mediaNum} > * img.select_rating_5`).attr("src", '/images/review_stars/ios/10X10_4-5@3x.png');
+        $(`#media${mediaNum} > * img.select_rating_1, #media${mediaNum} > * img.select_rating_2, #media${mediaNum} > * img.select_rating_3, #media${mediaNum} > * img.select_rating_4`).attr("src", '/images/star_4.png');
+        $(`#media${mediaNum} > * img.select_rating_5`).attr("src", '/images/star_4-5.png');
         break;
     case 5:
-        $(`#media${mediaNum} > * img.select_rating_1, #media${mediaNum} > * img.select_rating_2, #media${mediaNum} > * img.select_rating_3, #media${mediaNum} > * img.select_rating_4, #media${mediaNum} > * img.select_rating_5`).attr("src", '/images/review_stars/ios/10X10_5@3x.png');
+        $(`#media${mediaNum} > * img.select_rating_1, #media${mediaNum} > * img.select_rating_2, #media${mediaNum} > * img.select_rating_3, #media${mediaNum} > * img.select_rating_4, #media${mediaNum} > * img.select_rating_5`).attr("src", '/images/star_5.png');
   }
 }
 
