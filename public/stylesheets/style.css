@@ -12,6 +12,11 @@
   background-size: cover;
 }
 
+#map div .gm-style {
+    border-radius: 30px;
+}
+
+
 #map {
   width: 95%;
   height: 90%;

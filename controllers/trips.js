@@ -10,7 +10,7 @@ module.exports = {
  //need to use populate('').exec(function(err, user)) req.body(json body parser)
 
 function index(req, res) {
-  Trip.findBy({userId: req.user.id}, function(err, trips) {
+  Trip.find({userId: req.user.id}, function(err, trips) {
     if (err) return res.status(401).json({msg: 'Failed to retrieve Trips'});
     res.status(200).json(trips);
   });
