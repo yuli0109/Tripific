@@ -3,8 +3,12 @@
 <header id="header" class="">
     <ul class="right">
       <% if (user) { %>
-        <li><a href="/logout" id="logout" class="btn logout">Logout</a></li>
-        <li><a href="/trips" class="btn" id="trips-btn">My Trips</a></li>
+      <li>
+        <a href="/logout" id="logout" class="btn logout">Logout</a>
+      </li>
+      <li>
+        <a href="/trips" class="btn" id="trips-btn">My Trips</a>
+      </li>
       <% } else { %>
       <a href="/auth/google" class="btn btn-lg btn-outline-secondary"><img id="google-btn" src="./images/googlebtn.png" alt="Login with Google"></a>
       <% } %>

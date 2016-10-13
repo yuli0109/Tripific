@@ -14,9 +14,9 @@
 
 #map {
   width: 95%;
-  height: 90%;
+  height: 450px;
   margin: 0 auto;
-  margin-top: 20px;
+  margin-top: 5px;
   border-radius: 30px;
   border:5px solid #fefefe;
 }
@@ -29,10 +29,27 @@
 }
 
 #info_container {
-  margin-top: 20px;
+  margin-top: -115px;
   width: 30%;
   height: 70%;
   margin-bottom: 10px;
+}
+
+#directions {
+ font-family: 'Oxygen', sans-serif;
+ font-style: italic;
+ color: #F2EDDA ;
+ font-size: 16px;
+ text-align: center;
+ /*padding: 5px;*/
+ width: 100%;
+}
+
+#trips-btn-2 {
+ margin-right: 133px;
+ border-color: #F7F7EF ;
+ color: #F7F7EF ;
+ background-color: none;
 }
 
 div#route_info {
@@ -40,7 +57,7 @@ div#route_info {
   height: 500px;
   /*border: 1px solid red;*/
   margin: 0 auto;
-  margin-top: 50%
+  margin-top: 48%
 }
 
 html, body {
@@ -75,9 +92,8 @@ ul {
 }
 
 #trips-btn {
-  margin-right: 100px;
-  margin-top: 15px;
-  float: right;
+  margin-right: 155px;
+  margin-top: -93px;
 }
 
 #tripific {
@@ -124,6 +140,20 @@ ul {
     font-size: 20px;
     background-color: rgba(0, 0, 0, .5);
     border: 3px solid #e4e4e4;
+    height: 450px;
+    border-radius: 30px;
+}
+
+#trips-btn2 {
+  width:80%;
+  height:10%;
+  font-size: 20px;
+  border-color: #F7F7EF;
+  color: #F7F7EF;
+  background-color: none;
+  margin-left: 23px;
+  display: inline-block;
+
 }
 
 /*About/Info View*/
