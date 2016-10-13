@@ -2,14 +2,14 @@
 
 # Tripific
 
-    Tripific is a road trip planning application, designed to help you 
-    get the most out of your next road trip! By incorporating the the 
-    technologies available through Google Maps and Yelp, Tripific 
-    allows you to filter through specific Yelp categories to customize
-    the waypoints you'd like to stop at throughout your trip. 
-    See more, do more, and drive less!
+    Tripific is a planning application designed to help you get the most 
+    out of your next road trip! By incorporating Google Maps and Yelp 
+    technologies, Tripific allows you to customize the waypoints you'd 
+    like to stop at throughout your trip. See more, do more, and drive less!
 
-Links:
+    Check it out: https://tripific.herokuapp.com/
+
+Additional Links:
 
 Trello - https://trello.com/b/sUdF5Roq/project3-wdi
 
@@ -49,18 +49,18 @@ Technologies Used:
     Google OAuth
     Express-Session
 
-Installation Instructions:
+User Instructions:
 
-    1. Deploy application using Heroku link above
-    2. Begin by signing up or logging in through Google OAuthorization.
-    3. Next select the desired palce of origin and ending point.
-    4. Your desired route is generated on a maps.
-    5. Select waypoints along the trip's route.
-    6. The route will automatically adjust according to the waypoints selected by the user.
-    7. The user can filter certain yelp categories in order to find specific waypoint destinations within 5 miles the pin dropped.
-    8. Add desired activities to your itinerary and save your trip.
-    9. By Selecting specific waypoints and choosing activities, you can customize your road trip
-    and see the and do the most while traveling efficiently!     
+    1. Launch application using Heroku link above
+    2. Sign up or log in through Google OAuthorization.
+    3. Next select the desired place of origin and ending point. 
+       Your desired route will be generated on a map.
+    4. Select waypoints along the trip's route. The route will 
+       automatically adjust according to the waypoints selected by the user.
+    5. Filter Yelp categories to find waypoint destinations within 5 miles of the pin dropped.
+    6. Add desired activities to your itinerary and save your trip.
+    7. By selecting specific waypoints and choosing activities, you can customize your road trip
+       and see the and do the most while traveling efficiently!     
 
 Future Features:
 
