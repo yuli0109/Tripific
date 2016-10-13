@@ -513,7 +513,7 @@ function renderAllTrips(){
         <tr>
           <td><a href="/trips/${trip._id}">${trip.origin} to ${trip.destination}</a></td>
           <td>${moment(trip.tripDate).format("MM-DD-YYYY")}</td>
-          <td><a href="#restaurant_page" onclick="displayMapTrip('${trip._id}')"><img src="/images/icons/x-mark-3-32.png" alt=""></a></td>
+          <td><a href="#restaurant_page" onclick="displayMapTrip('${trip._id}')"><img src="/images/icons/map-marker-32.png" alt=""></a></td>
           <td><a href="#" onclick="deleteTrip('${trip._id}')"><img src="/images/icons/x-mark-3-32.png" alt=""></a></td>
         </tr>
       `;
