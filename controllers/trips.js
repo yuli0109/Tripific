@@ -17,9 +17,10 @@ function index(req, res) {
 }
 
 function show(req, res) {
-  Trip.findOne(req.user.id).sort({_id: -1}).exec(function(err, trip){
+  Trip.findById(req.params.tripId).exec(function(err, trip){
    if (err) return res.status(401).json({msg: 'Failed to retrieve Trips'});
-    res.status(200).json(trip);
+    console.log(trip);
+    res.render('itinerary', {trip: trip})
   });
 }
 
@@ -36,6 +37,6 @@ function create(req, res) {
 
 function del(req, res) {
   Trip.findByIdAndRemove(req.params.id, function(err, trip){
-    res.redirect('/trips');
+    res.render('/trips');
   });
 }

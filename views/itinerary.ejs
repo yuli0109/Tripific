@@ -26,10 +26,11 @@
  -->
 
   <table id="itinerary-table" class="table">
-      <% trip.stops.forEach(function(stop){ %>
+      <% trip.stops.forEach(function(stop,idx){ %>
     <thead>
       <tr>
-        <th scope="row"><%= stop.name %></th>
+        <th scope="row">Stop<%= idx+1 %></th>
+        <th></th>
         <th></th>
         <th></th>
       </tr>
@@ -38,7 +39,8 @@
         <% stop.activities.forEach(function(activity){ %>
       <tr>
         <th scope="row"></th>
-        <td><%= activity.name %></td>
+        <td><%= activity.type %></td>
+        <td><%= activity.businessId %></td>
         <td><a href=""><img src="/images/icons/x-mark-3-32.png" alt=""></a></td>
       </tr>
         <% }) %>
