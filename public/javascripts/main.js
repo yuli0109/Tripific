@@ -22,16 +22,16 @@ var allTrips = [];
 var origin = "";
 //Current destination
 var destination = "";
-
-
+//Represents all markers
+var markers = [];
 
 function initMap() {
   var autocomplete_orgin = new google.maps.places.Autocomplete(document.getElementById('origin'));
   var autocomplete_dest = new google.maps.places.Autocomplete(document.getElementById('dest'));
-  var directionsService = new google.maps.DirectionsService;
-  var directionsDisplay = new google.maps.DirectionsRenderer;
+   directionsService = new google.maps.DirectionsService;
+   directionsDisplay = new google.maps.DirectionsRenderer;
   //Array of marker object
-  var markers = [];
+  markers = [];
   //Array Id counter
   var markerId = 0;
    map = new google.maps.Map(document.getElementById('map'), {
@@ -462,5 +462,32 @@ function getAllTrips(){
 function renderOneTrip (tripId) {
   tripToRender = allTrips.filter(function(elm) {
     return elm._id == tripId
+  })[0];
+  currentTrip = tripToRender;
+  origin = tripToRender.origin;
+  destination = tripToRender.destination;
+  waypts = tripToRender.stops.map(function(elem, index) {
+    return {
+            location: {
+              lat: elem.location.lat,
+              lng: elem.location.lng
+            },
+            stopover: false
+          }
+  });
+  calculateAndDisplayRoute(directionsService, directionsDisplay);
+  renderStops();
+}
+
+function renderStops(){
+  currentTrip.stops.forEach(function(stop){
+    var marker = new google.maps.Marker({
+      position: stop.location,
+      map: map,
+      title: stop._id
+    });
+    // marker.addListener('click', function(){
+    //   console.log('stop clicked');
+    // });
   });
 }
