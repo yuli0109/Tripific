@@ -68,11 +68,22 @@ ul {
   opacity: .9;
 }
 
-#logout {
+#google-btn {
+  box-shadow: 1px 1px 1px #888888;
+}
+
+#trips-btn, #logout {
   border-color: #F7F7EF;
   color: #F7F7EF;
   background-color: none;
   align-self: right;
+  padding: -25px;
+}
+
+#trips-btn {
+  margin-right: 100px;
+  margin-top: 15px;
+  float: right;
 }
 
 #tripific {
