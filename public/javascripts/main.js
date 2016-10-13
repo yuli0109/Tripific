@@ -37,6 +37,7 @@ function initMap() {
    map = new google.maps.Map(document.getElementById('map'), {
     zoom: 9,
     center: los_angeles,
+    scrollwheel: false,
     styles: [
               {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
               {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
