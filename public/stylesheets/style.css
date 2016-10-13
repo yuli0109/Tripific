@@ -19,8 +19,12 @@ button#modal-btns.btn.btn-success{
   margin: 50px;
 }
 
-div.modal-content {
+#modal_confirm {
   width: 625px;
+  right: 150px;
+  top: 50px;
+  padding: 50px;
+  text-align: center;
 }
 
 #autocomplete {
