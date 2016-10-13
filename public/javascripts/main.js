@@ -17,7 +17,11 @@ var currentActivity = "";
 //Current business type on click in act_style modal, for activities save
 var currentBusType = "";
 //All trips of the user
-var allTrip = [];
+var allTrips = [];
+//Current origin
+var origin = "";
+//Current destination
+var destination = "";
 
 
 
@@ -121,7 +125,6 @@ function initMap() {
     calculateAndDisplayRoute(directionsService, directionsDisplay);
   };
 
-  document.getElementById('goBtn').addEventListener('click', onClickHandler);
   //Saving the trip on user
   $("#goBtn").on('click', function(event) {
     $.ajax({
@@ -137,7 +140,10 @@ function initMap() {
     .done(function(data) {
       currentTrip = data;
     })
+    origin = $("#origin").val();
+    destination = $("#dest").val();
   });
+  document.getElementById('goBtn').addEventListener('click', onClickHandler);
 
   //Define the drawing manager
   var drawingManager = new google.maps.drawing.DrawingManager({
@@ -240,8 +246,8 @@ function initMap() {
 
 function calculateAndDisplayRoute(directionsService, directionsDisplay) {
   directionsService.route({
-    origin: document.getElementById('origin').value,
-    destination: document.getElementById('dest').value,
+    origin: origin,
+    destination: destination,
     travelMode: 'DRIVING',
     waypoints: waypts
   }, function(response, status) {
@@ -442,12 +448,18 @@ function cancelConfirm(){
   $('#confirm_modal').modal('hide');
 }
 
-function getAllTrip(){
+function getAllTrips(){
   $.ajax({
     url: '/trips',
     dataType: 'json'
   })
   .done(function(data) {
-    allTrip = data;
+    allTrips = data;
   })
+}
+
+function renderOneTrip (tripId) {
+  tripToRender = allTrips.filter(function(elm) {
+    return elm._id == tripId
+  });
 }
