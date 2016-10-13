@@ -457,3 +457,4 @@ function getAllTrip(){
     $('#recreation_modal').modal('hide');
   })
 }
+
