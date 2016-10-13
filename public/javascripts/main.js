@@ -16,6 +16,8 @@ var currentStopId = "";
 var currentActivity = "";
 //Current business type on click in act_style modal, for activities save
 var currentBusType = "";
+//All trips of the user
+var allTrip = [];
 
 
 
@@ -435,24 +437,16 @@ function doAddAct(){
   })
 }
 
+function cancelConfirm(){
+  $('#confirm_modal').modal('hide');
+}
+
 function getAllTrip(){
-    $.ajax({
-    url: `/`,
-    dataType: 'json',
-    method: "GET",
-    data: {
-      businessType: currentBusType,
-      businessName: "business_name",
-      businessId: currentActivity,
-      lat: currentMark.lat,
-      lng: currentMark.lng
-    }
+  $.ajax({
+    url: '/trips',
+    dataType: 'json'
   })
   .done(function(data) {
-    currentTrip = data;
-    $('#confirm_modal').modal('hide');
-    $('#restaurant_modal').modal('hide');
-    $('#shopping_modal').modal('hide');
-    $('#recreation_modal').modal('hide');
+    allTrip = data;
   })
 }
