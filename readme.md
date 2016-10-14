@@ -2,18 +2,18 @@
 
 # Tripific
 
-    Tripific is a planning application designed to help you get the most 
-    out of your next road trip! By incorporating Google Maps and Yelp 
-    technologies, Tripific allows you to customize the waypoints you'd 
-    like to stop at throughout your trip. See more, do more, and drive less!
+[![screenshot_home.jpg](https://s4.postimg.org/lk53wu31p/screenshot_home.jpg)](https://postimg.org/image/4wdluc8a1/)
 
-    Check it out: https://tripific.herokuapp.com/
+https://tripific.herokuapp.com/
+
+Tripific is a road trip planning application, designed to help you get the most 
+out of your next road trip! By incorporating Google Maps and Yelp 
+technologies, Tripific allows you to customize the waypoints you'd 
+like to stop at throughout your trip. See more, do more, and drive less!
 
 Additional Links:
 
 Trello - https://trello.com/b/sUdF5Roq/project3-wdi
-
-Heroku - https://tripific.herokuapp.com/
 
 Presentation - https://docs.google.com/presentation/d/18YgAXaNqtX2f3b1WrL2OQwlgdgIPqU77tQl8ne4ojLY/edit#slide=id.p
 
@@ -33,6 +33,19 @@ Approach to Project:
     throughout the development stage. We also attempted to follow RESTful 
     conventions while creating our application's routes.
 
+
+| RESTful API Routes   | |
+| --------|-----------| 
+| GET   | /trips    |
+| GET    | /trips/:tripId |
+| POST   | /trips
+| POST   | /trips/:tripId/stops  |
+| POST   | /stops/:stopId/activities |
+| DELETE | /trips/:id  |
+| DELETE | /stops/:stopId  |
+| DELETE | /activities/:activityId |
+
+
 Technologies Used: 
 
     HTML5 & CSS3
@@ -49,15 +62,17 @@ Technologies Used:
     Google OAuth
     Express-Session
 
+[![screenshot_map.jpg](https://s13.postimg.org/ltfy83x2f/screenshot_map.jpg)](https://postimg.org/image/zacwqz7dv/)
+
 User Instructions:
 
     1. Launch application using Heroku link above
     2. Sign up or log in through Google OAuthorization.
-    3. Next select the desired place of origin and ending point. 
-       Your desired route will be generated on a map.
-    4. Select waypoints along the trip's route. The route will 
-       automatically adjust according to the waypoints selected by the user.
-    5. Filter Yelp categories to find waypoint destinations within 5 miles of the pin dropped.
+    3. Select origin and destination. Your desired route will be generated on a map.
+    4. Click on the map to select waypoints along the trip's route. Your route will 
+       automatically adjust.
+    5. Click the hand icon, then click on a waypoint pin to filter Yelp categories 
+       and find dining, shopping and recreation within 5 miles of the pin dropped.
     6. Add desired activities to your itinerary and save your trip.
     7. By selecting specific waypoints and choosing activities, you can customize your road trip
        and see the and do the most while traveling efficiently!     
